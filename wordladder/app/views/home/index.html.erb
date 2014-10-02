@@ -1,0 +1,33 @@
+<h1>Word Ladder</h1>
+<br>
+<br>
+<br>
+<%= load "#{Rails.root}/lib/ladder.rb" %>
+<%= form_tag(query_path, method: "get") do  %>
+    <%="Step 0: "%>
+<br>
+    <%="Step 1: "%>
+    <%= label_tag(:query) %>
+    <%= text_field_tag(:query) %>
+<br>
+    <%="Step 2: "%>
+    <%= label_tag(:query2) %>
+    <%= text_field_tag(:query2) %>
+<br>
+    <%="Step 3: "%>
+    <%= label_tag(:query3) %>
+    <%= text_field_tag(:query3) %>
+<br>
+    <%="Step 4: "%>
+    <%= label_tag(:query4) %>
+    <%= text_field_tag(:query4) %>
+<br>
+    <%="Step 5: "%>
+    <%= label_tag(:query5) %>
+    <%= text_field_tag(:query5) %>
+    <%= submit_tag("Check Answer") %>
+<br>
+    <%="Goal:   "%>
+   
+<% end %>
+<br>
