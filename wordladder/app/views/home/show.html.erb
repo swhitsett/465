@@ -7,9 +7,9 @@
 <tbody>
 	<tr>
    		<td><%= "Start:" %></td>
-   		<td><%= @query_text %></td>
+   		<td><%= @query_text.at(0) %></td>
    	</tr>
-	<% @result.each do |word_guess| %>
+	<% @query_text.each do |word_guess| %>
 		 <tr>
 	   		<td><%= "Step:"%></td>
 	   		<td><%= word_guess %></td>
@@ -17,6 +17,6 @@
 	<% end %>
 	<tr>
    		<td><%= "End:" %></td>
-   		<td><%= @query_text %></td>
+   		<td><%= @query_text.at(1) %></td>
    	</tr>
 </tbody>

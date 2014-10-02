@@ -5,12 +5,15 @@ class HomeController < ApplicationController
   end
 
   def show
-    @query_text = params[:query,:query2,:query3,:query5]
-    if @query_text =~ /^[a-zA-Z0-9\.\-]*$/
-      @result = "#{@query_text}".split("\n") # @query_text #`whois #{@query_text}`.split("\n)
-    else
-      @result = ["Shouldnt be here"];
-    end
+    @query_text = Array.new
+   # @query_text = [:query,:query2,:query3,:query5]
+      @query_text.push(params[:query])
+      @query_text.push(params[:query2])
+      @query_text.push(params[:query3])
+      @query_text.push(params[:query4])
+      @query_text.push(params[:query5])
+
+      @result = @query_text # @query_text #`whois #{@query_text}`.split("\n)
   end
 
 end
