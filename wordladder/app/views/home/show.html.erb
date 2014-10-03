@@ -4,19 +4,22 @@
 
 <!--p>"$ whois #{@query_text} returned" // need to use <\%= tags</p-->
 <br>
-<tbody>
-	<tr>
-   		<td><%= "Start:" %></td>
-   		<td><%= @query_text.at(0) %></td>
-   	</tr>
-	<% @query_text.each do |word_guess| %>
-		 <tr>
-	   		<td><%= "Step:"%></td>
-	   		<td><%= word_guess %></td>
-	   	</tr>
-	<% end %>
-	<tr>
-   		<td><%= "End:" %></td>
-   		<td><%= @query_text.at(1) %></td>
-   	</tr>
-</tbody>
+<table cellpadding="3" border="1">
+    <tbody>
+            <tr>
+                    <td><%= "Start:" %></td>
+                    <td><%= @query_text.at(0) %></td>
+            </tr>
+            <% @query_text.each do |word_guess| %>
+                     <tr>
+                            <td><%= "Step:"%></td>
+                            <td><%= word_guess %></td>
+                    </tr>
+            <% end %>
+            <tr>
+                    <td><%= "End:" %></td>
+                    <td><%= @query_text.at(1) %></td>
+		    <%= @result %>
+            </tr>
+    </tbody>
+</table>
