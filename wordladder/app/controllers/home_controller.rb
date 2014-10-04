@@ -7,7 +7,7 @@ class HomeController < ApplicationController
 
   def show
       @query_text = Array.new
-      @query_text.push(params[:r_word1])
+      @query_text.push(params[:start_word])
       @query_text.push(params[:query])
       @query_text.push(params[:query2])
       @query_text.push(params[:query3])
