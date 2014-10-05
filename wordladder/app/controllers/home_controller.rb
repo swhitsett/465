@@ -29,20 +29,7 @@ class HomeController < ApplicationController
     if(@correct == true)
         @correct = legal @query_text
     end
-    # if(edit_distance_of_one @query_text.at(1), @query_text.at(2))
-    #     @correct = true
-    # end
-
-    # @query_text.each {|check|
-    #   if(edit_distance_of_one check, @query_text.at(@query_text.index(check)+1))
-    #       puts "hilo"
-    #   else
-    #       puts "wrong"
-    #   end
-    # }
     
-
-
   end
 
 end
