@@ -10,16 +10,24 @@
                     <td><%= "Start:" %></td>
                     <td><%= @query_text.at(0) %></td>
             </tr>
+            <% step_num = 1 %>
             <% @query_text.each do |word_guess| %>
                      <tr>
-                            <td><%= "Step:"%></td>
+                            <td><%= "Step #{step_num}:"%></td>
                             <td><%= word_guess %></td>
                     </tr>
+                    <% step_num += 1 %>
             <% end %>
             <tr>
                     <td><%= "End:" %></td>
-                    <td><%= @query_text.at(@query_text.length) %></td>
+                    <td><%= @query_text.last %></td>
 		    <%= @result %>
             </tr>
     </tbody>
+
+    <% if(@correct == true) %>
+        <%= "Correct you win" %>
+    <% else %>
+        <%= "Incorrect you loose" %>
+    <% end %>
 </table>
