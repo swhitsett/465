@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   end
 
   def show
-    @correct = false
+    @correct = true
     @query_text = Array.new
     @query_text.push(params[:start_word])
     @query_text.push(params[:query1]) if params[:query1] != ""
@@ -17,7 +17,18 @@ class HomeController < ApplicationController
     @query_text.push(params[:end_word])
     # @query_text.compact!
 
-    
+
+    i = 0
+    while(i != @query_text.length - 1)
+        if(!edit_distance_of_one @query_text.at(i), @query_text.at(i+1))
+            @correct = false
+        end
+        i += 1
+    end
+
+    if(@correct == true)
+        @correct = legal @query_text
+    end
     # if(edit_distance_of_one @query_text.at(1), @query_text.at(2))
     #     @correct = true
     # end
