@@ -19,7 +19,7 @@ class HomeController < ApplicationController
 
 
     i = 0
-    while(i != @query_text.length - 1)
+    while(i != @query_text.length - 1 && @correct == true)
         if(!edit_distance_of_one @query_text.at(i), @query_text.at(i+1))
             @correct = false
         end
