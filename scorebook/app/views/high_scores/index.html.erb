@@ -17,7 +17,9 @@
         <td><%= high_score.game %></td>
         <td><%= high_score.score %></td>
 	<td><%= link_to 'Show', high_score %></td>
+	<td><%= link_to 'Edit', edit_high_score_path(high_score) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<%= link_to 'New High score',controller: "high_scores",action: "new"%>
