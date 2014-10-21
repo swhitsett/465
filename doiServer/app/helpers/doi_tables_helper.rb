@@ -1,0 +1,2 @@
+module DoiTablesHelper
+end
