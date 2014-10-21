@@ -1,6 +1,0 @@
-currently on step 10
-
-use bundle show _gemName_;  -- to see where a file is located
-
-do bundle install to install gems on desired computr
-
