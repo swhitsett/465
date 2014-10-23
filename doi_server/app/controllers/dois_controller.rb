@@ -15,6 +15,7 @@ class DoisController < ApplicationController
   def new
     @doi = Doi.new
     @doi.urls.new
+
   end
 
   # GET /dois/1/edit

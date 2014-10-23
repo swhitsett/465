@@ -5,6 +5,5 @@ class Doi < ActiveRecord::Base
 
   validates :name, presence: true
   validates :desc, presence: true
-  validates :url, presence: true
 
 end

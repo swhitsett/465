@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20141023034343) do
 
   create_table "urls", force: true do |t|
     t.string   "site"
-    t.string   "doiIdentifier"
+    t.string   "doiidentifier"
     t.integer  "doi_id"
     t.datetime "created_at"
     t.datetime "updated_at"
