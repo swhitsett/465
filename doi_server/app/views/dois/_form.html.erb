@@ -1,0 +1,48 @@
+<%= form_for(@doi) do |f| %>
+  <% if @doi.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@doi.errors.count, "error") %> prohibited this doi from being saved:</h2>
+
+      <ul>
+      <% @doi.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :desc %><br>
+    <%= f.text_field :desc %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </div>
+  <% if @doi.urls.last.new_record? %>
+    <%= f.fields_for :urls do |urls_form| %>
+      <h3>New Url</h3>
+      <div style="margin-left:30px;">
+        <div class="field">
+          <%= urls_form.label :site %><br>
+          <%= urls_form.text_field :site %>
+        </div>
+        <div class="field">
+          <%= urls_form.label :doiIdentifer %><br>
+          <%= urls_form.text_field :doiIdentifer %>
+        </div>
+        <div class="field">
+          <%= urls_form.label :doi_id %><br>
+          <%= urls_form.number_field :doi_id %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

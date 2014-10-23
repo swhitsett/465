@@ -2,10 +2,10 @@
 
 one:
   site: MyString
-  doiID: MyString
+  doiIdentifier: MyString
   doi_id: 
 
 two:
   site: MyString
-  doiID: MyString
+  doiIdentifier: MyString
   doi_id: 
