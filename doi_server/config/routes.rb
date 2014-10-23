@@ -8,10 +8,10 @@ Rails.application.routes.draw do
 
   # rating's routes will NOT be nested for show, edit, update, destroy
   # /ratings/:id/
-  resources :doi do
-    resources :url, shallow: true
+  resources :dois do
+    resources :urls, shallow: true
   end
 
-  root 'doi#index'
+  root 'dois#index'
 
 end
