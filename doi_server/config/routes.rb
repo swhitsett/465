@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   end
 
   root 'dois#index'
+  get 'query',to: 'dois#showsearch'
 
 end

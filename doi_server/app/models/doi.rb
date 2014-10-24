@@ -6,4 +6,8 @@ class Doi < ActiveRecord::Base
   validates :name, presence: true
   validates :desc, presence: true
 
+  def search 
+  	name
+  end
+
 end

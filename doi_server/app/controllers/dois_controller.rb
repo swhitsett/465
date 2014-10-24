@@ -11,6 +11,11 @@ class DoisController < ApplicationController
     @url = @doi.urls.new
   end
 
+  def showsearch
+    @doi = Doi.find(params[:query])
+    @url = @doi.urls.new
+  end
+  
   # GET /dois/new
   def new
     @doi = Doi.new
