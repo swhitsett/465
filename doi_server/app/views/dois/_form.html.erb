@@ -20,12 +20,12 @@
     <%= f.text_field :desc %>
   </div>
 
-  <%= f.fields_for :urls do |urls_form| %>
-      <div class="field">
-        <%= urls_form.label :site %><br>
-        <%= urls_form.text_field :site %>
-      </div>
-  <% end %>
+    <%= f.fields_for :urls do |urls_form| %>
+        <div class="field">
+          <%= urls_form.label :site %><br>
+          <%= urls_form.text_field :site %>
+        </div>
+    <% end %>
 
   <div class="actions">
     <%= f.submit %>
