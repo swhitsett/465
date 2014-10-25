@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @doi.name %>'s Urls </h1>
-<h2><%= @doi.url %></h2>
+<h2>Url history for: <%= @doi.name %></h2>
+<h3>DOI id: <%= @doi.url %></h3>
 <!-- this table use to be in app/views/urls/index.html.erb -->
-<table>
+<table border="1" >
   <thead>
       <tr>
         <th>Site</th>
@@ -24,9 +24,9 @@
     <% end %>
   </tbody>
 </table>
-<h3>Create New Url</h3>
+<h3>Add new Url</h3>
 <%= render 'urls/form' %>
 <br>
 
 <%= link_to 'Edit', edit_doi_path(@doi) %> |
-<%= link_to 'Show all Dois', dois_path %>
+<%= link_to 'Search for another DOI', dois_path %>

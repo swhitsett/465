@@ -1,7 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+dois = Doi.create(
+  [
+    { name: 'Sally', desc: 'Jones', url: 'Chico State'},
+    { name: 'Fred', desc: 'Smith', url: 'Chico State'}
+  ]
+)
+
+urls = Url.create(
+  [
+    { site: 'PHYS 204B', rating: 4, doi_id: dois[0].id},
+    { site: 'PHYS 204B', rating: 78, doi_id: dois[0].id},
+    { site: 'MATH 217', rating: 0, doi_id: dois[1].id}
+  ]
+)

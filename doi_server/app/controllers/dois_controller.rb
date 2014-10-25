@@ -19,7 +19,7 @@ class DoisController < ApplicationController
     @query_text = params[:query]
     @query_name = params[:name_query]
 
-    if @query_text
+    if @query_text 
       @doix = Doi.find_by(url: @query_text)
     end
 
