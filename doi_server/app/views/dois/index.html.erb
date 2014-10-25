@@ -2,8 +2,15 @@
 
 <%= form_tag(query_path, method: "get") do  %>
 
-    <%= label_tag(:query,"Search") %>
+    <%= label_tag(:query,"DOI") %>
     <%= text_field_tag(:query) %>
+    <%= submit_tag("Search") %>
+   
+<% end %>
+<%= form_tag(query_path, method: "get") do  %>
+
+    <%= label_tag(:name_query,"Name") %>
+    <%= text_field_tag(:name_query) %>
     <%= submit_tag("Search") %>
    
 <% end %>
@@ -19,8 +26,7 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @dois.each do |doi| %>
+    <% @doib2.each do |doil| %>
       <tr>
         <td><%= doi.name %></td>
         <td><%= doi.desc %></td>
@@ -30,7 +36,6 @@
         <td><%= link_to 'Destroy', doi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-  </tbody>
 </table>
 
 <br>

@@ -12,8 +12,22 @@ class DoisController < ApplicationController
   end
 
   def showsearch
-    @doi = Doi.find(params[:query])
-    @url = @doi.urls.new
+    # @doi = Doi.find(params[:query])
+    # @url = @doi.urls.new
+
+    @query_text = params[:query]
+    @query_name = params[:name_query]
+
+    if @query_text
+      @doi = Doi.find_by(url: @query_text)
+    end
+
+    if @query_name # && @query_name != ""
+      @dois_by_name = Doi.all.map { |doi| doi if /#{@query_name}/ =~ doi.name }.compact
+    end
+    #@doi = Doi.find_by(url: , @name)
+    render :index
+
   end
   
   # GET /dois/new
