@@ -3,9 +3,8 @@ class CreateImageobjs < ActiveRecord::Migration
     create_table :imageobjs do |t|
       t.string :filename
       t.string :private
-      t.string :user_id
-      t.references :userobj
-      t.references :tagobj
+      t.references :tagobj, index: true
+      t.references :userobj, index: true
 
       t.timestamps
     end

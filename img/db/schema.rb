@@ -11,26 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141106195213) do
+ActiveRecord::Schema.define(version: 20141106222245) do
 
   create_table "imageobjs", force: true do |t|
     t.string   "filename"
     t.string   "private"
-    t.string   "user_id"
-    t.integer  "userobj_id"
     t.integer  "tagobj_id"
+    t.integer  "userobj_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "imageobjs", ["tagobj_id"], name: "index_imageobjs_on_tagobj_id"
+  add_index "imageobjs", ["userobj_id"], name: "index_imageobjs_on_userobj_id"
+
   create_table "imageusrs", force: true do |t|
-    t.string   "img_id"
-    t.string   "user_id"
-    t.integer  "userobj_id"
     t.integer  "imageobj_id"
+    t.integer  "userobj_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "imageusrs", ["imageobj_id"], name: "index_imageusrs_on_imageobj_id"
+  add_index "imageusrs", ["userobj_id"], name: "index_imageusrs_on_userobj_id"
 
   create_table "tagobjs", force: true do |t|
     t.string   "tag_string"
@@ -40,12 +43,22 @@ ActiveRecord::Schema.define(version: 20141106195213) do
   end
 
   create_table "userobjs", force: true do |t|
-    t.string   "email"
-    t.string   "enc_pwd"
     t.string   "name"
-    t.integer  "imageobj_id"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "userobjs", ["email"], name: "index_userobjs_on_email", unique: true
+  add_index "userobjs", ["reset_password_token"], name: "index_userobjs_on_reset_password_token", unique: true
 
 end

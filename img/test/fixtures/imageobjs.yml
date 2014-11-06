@@ -1,15 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  filename: 
-  private: 
-  user_id: 
-  userobj: 
-  tagobj: 
+  filename: MyString
+  private: MyString
+  tagobj_id: 
+  userobj_id: 
 
 two:
-  filename: 
-  private: 
-  user_id: 
-  userobj: 
-  tagobj: 
+  filename: MyString
+  private: MyString
+  tagobj_id: 
+  userobj_id: 
