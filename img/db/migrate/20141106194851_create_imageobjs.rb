@@ -4,9 +4,9 @@ class CreateImageobjs < ActiveRecord::Migration
       t.string :filename
       t.string :private
       t.string :user_id
-      t.refrences :tagobj
-      t.refrences :userobj
-      
+      t.references :userobj
+      t.references :tagobj
+
       t.timestamps
     end
   end

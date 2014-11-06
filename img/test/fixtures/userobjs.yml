@@ -3,11 +3,11 @@
 one:
   email: MyString
   enc_pwd: MyString
-  name: MyString
+  name: 
   imageobj: 
 
 two:
   email: MyString
   enc_pwd: MyString
-  name: MyString
+  name: 
   imageobj: 

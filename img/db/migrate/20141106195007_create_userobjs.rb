@@ -4,7 +4,7 @@ class CreateUserobjs < ActiveRecord::Migration
       t.string :email
       t.string :enc_pwd
       t.string :name
-      t.refrences :imageobj
+      t.references :imageobj
 
       t.timestamps
     end

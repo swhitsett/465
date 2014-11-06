@@ -1,4 +1,0 @@
-rails generate model ImageObj filename:string private:string user_id:string
-rails generate model TagObj tag_string:string img_id:string
-rails generate model ImageUsr img_id:string user_id:string
-rails generate model UserObj email:string enc_pwd:string name:string
