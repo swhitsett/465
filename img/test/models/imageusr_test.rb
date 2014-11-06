@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class UserObjTest < ActiveSupport::TestCase
+class ImageusrTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

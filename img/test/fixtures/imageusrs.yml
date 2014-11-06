@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  tag_string: MyString
   img_id: MyString
+  user_id: MyString
+  userobj: 
+  imageobj: 
 
 two:
-  tag_string: MyString
   img_id: MyString
+  user_id: MyString
+  userobj: 
+  imageobj: 

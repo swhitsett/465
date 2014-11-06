@@ -1,6 +1,6 @@
-class CreateTagObjs < ActiveRecord::Migration
+class CreateTagobjs < ActiveRecord::Migration
   def change
-    create_table :tag_objs do |t|
+    create_table :tagobjs do |t|
       t.string :tag_string
       t.string :img_id
 

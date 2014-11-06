@@ -3,9 +3,9 @@
 one:
   filename: MyString
   private: MyString
-  userid: MyString
+  user_id: MyString
 
 two:
   filename: MyString
   private: MyString
-  userid: MyString
+  user_id: MyString
