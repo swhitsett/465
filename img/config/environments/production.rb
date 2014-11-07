@@ -1,16 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-    # enable mailer so Devise can send email
-  config.action_mailer.default_url_options = { :host => 'http://ec2-54-69-30-218.us-west-2.compute.amazonaws.com/ratings' }
-  # ActionMailer Config
-  # Setup for production - deliveries, no errors raised
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  # Disable delivery errors, bad email addresses will be ignored
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default :charset => "utf-8"
-
   # Code is not reloaded between requests.
   config.cache_classes = true
 
