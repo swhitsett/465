@@ -10,6 +10,8 @@ class DoisController < ApplicationController
   # GET /dois/1
   def show
     @url = @doi.urls.new
+    #@random = rand(3000)
+
   end
 
   def showsearch
