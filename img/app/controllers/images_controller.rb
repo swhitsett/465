@@ -26,29 +26,29 @@ class ImagesController < ApplicationController
   def create
     @image = Image.new(image_params)
     # @image.generate_filename
-    # @image.user = current_user
+    @image.user = current_user
 
-    # @uploaded_io = params[:image][:uploaded_file]
+    @uploaded_io = params[:image][:uploaded_file]
 
-    # File.open(Rails.root.join('public', 'images', @image.filename), 'wb') do |file|
-    #     file.write(@uploaded_io.read)
-    # end
-
-    # if @image.save
-    #   redirect_to @image, notice: 'Image was successfully created.'
-    # else
-    #   render :new
-    # end
-
-    respond_to do |format|
-      if @image.save
-        format.html { redirect_to @image, notice: 'Image was successfully created.' }
-        format.json { render :show, status: :created, location: @image }
-      else
-        format.html { render :new }
-        format.json { render json: @image.errors, status: :unprocessable_entity }
-      end
+    File.open(Rails.root.join('public', 'images', @image.filename), 'wb') do |file|
+        file.write(@uploaded_io.read)
     end
+
+    if @image.save
+      redirect_to @image, notice: 'Image was successfully created.'
+    else
+      render :new
+    end
+
+    # respond_to do |format|
+    #   if @image.save
+    #     format.html { redirect_to @image, notice: 'Image was successfully created.' }
+    #     format.json { render :show, status: :created, location: @image }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @image.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /images/1
