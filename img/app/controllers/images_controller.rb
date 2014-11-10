@@ -27,7 +27,7 @@ class ImagesController < ApplicationController
     @image = Image.new(image_params)
     @image.generate_filename
     @image.user = current_user
-
+    @image.id = @image.filename
     @uploaded_io = params[:image][:uploaded_file]
 
     File.open(Rails.root.join('public', 'images', @image.filename), 'wb') do |file|

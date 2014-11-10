@@ -3,7 +3,6 @@ class Image < ActiveRecord::Base
   has_many :tag
   has_many :users, through: :access
 
-
   def generate_filename
   	self.filename = SecureRandom.hex(12) + ".jpg"
   end
