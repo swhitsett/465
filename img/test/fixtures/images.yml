@@ -3,11 +3,11 @@
 one:
   filename: MyString
   private: MyString
-  tag_id: 
   user_id: 
+  tag_id: 
 
 two:
   filename: MyString
   private: MyString
-  tag_id: 
   user_id: 
+  tag_id: 

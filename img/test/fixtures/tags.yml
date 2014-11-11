@@ -2,8 +2,8 @@
 
 one:
   tag_string: MyString
-  image_id: MyString
+  image_id: 
 
 two:
   tag_string: MyString
-  image_id: MyString
+  image_id: 

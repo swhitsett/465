@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :images
-  resources :tags, shallow: true
-  resources :access, shallow: true
+  # resources :tags
+  resources :images do
+    resources :tags, shallow: true
+  end
 
   root 'images#index'
 end

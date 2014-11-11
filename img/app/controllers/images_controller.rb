@@ -10,11 +10,13 @@ class ImagesController < ApplicationController
   # GET /images/1
   # GET /images/1.json
   def show
+    @tag = @image.tags.new
   end
 
   # GET /images/new
   def new
     @image = Image.new
+    @image.tags.new
   end
 
   # GET /images/1/edit
@@ -26,8 +28,8 @@ class ImagesController < ApplicationController
   def create
     @image = Image.new(image_params)
     @image.generate_filename
-    @image.user = current_user
-    @image.id = @image.filename
+    #@image.user = current_user
+
     @uploaded_io = params[:image][:uploaded_file]
 
     File.open(Rails.root.join('public', 'images', @image.filename), 'wb') do |file|
@@ -48,7 +50,6 @@ class ImagesController < ApplicationController
     #     format.html { render :new }
     #     format.json { render json: @image.errors, status: :unprocessable_entity }
     #   end
-    # end
   end
 
   # PATCH/PUT /images/1
@@ -83,6 +84,6 @@ class ImagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def image_params
-      params.require(:image).permit(:filename, :private, :tag_id, :user_id)
+      params.require(:image).permit(:filename, :private, :user_id, :tag_id, tags_attributes: [:tag_string])#params.require(:image).permit(:filename, :private, :user_id, :tag_id)
     end
 end

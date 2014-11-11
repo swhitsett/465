@@ -11,14 +11,26 @@
 </p>
 
 <p>
-  <strong>Tag:</strong>
-  <%= @image.tag %>
+  <strong>User:</strong>
+  
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @image.user %>
+  <strong>Tag:</strong>
+  
 </p>
+
+<tbody>
+ <% @image.tags.reverse.each do |tag| %>
+ <% if !tag.new_record? %>
+   <tr>
+     <td><%= tag.tag_string %></td>
+   </tr>
+   <% end %>
+ <% end %>
+</tbody>
+
+<%= render 'tags/form' %>
 
 <%= link_to 'Edit', edit_image_path(@image) %> |
 <%= link_to 'Back', images_path %>
