@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :access
   has_many :images, through: :access
+
+  def gimmie
+  	name
+  end
 end

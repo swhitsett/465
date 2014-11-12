@@ -11,6 +11,7 @@ class ImagesController < ApplicationController
   # GET /images/1.json
   def show
     @tag = @image.tags.new
+    @access = @image.accesses.new
   end
 
   # GET /images/new
@@ -21,6 +22,7 @@ class ImagesController < ApplicationController
 
   # GET /images/1/edit
   def edit
+
   end
 
   # POST /images
@@ -29,7 +31,7 @@ class ImagesController < ApplicationController
     @image = Image.new(image_params)
     @image.generate_filename
     @image.user = current_user
-    
+
 
     @uploaded_io = params[:image][:uploaded_file]
 

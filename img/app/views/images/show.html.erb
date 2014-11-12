@@ -1,12 +1,31 @@
 <p id="notice"><%= notice %></p>
 <%= image_tag root_url + "/images/" + @image.filename, size: "400x300", :crop => :limit, alt: @image.filename %>
+
 <p>
-  <strong>User:</strong>
-  <%= @image.user %>
+  <%= form_for @image do |p| %>
+    <strong>This image is </strong>
+    <% if @image.private == "1" %>
+      Private
+    <% else %>
+      Not Private
+    <% end %>
+      <%= p.check_box :private %>
+      <%= p.submit "update" %>
+  <% end %>
+
+  </div>
+
 </p>
+
 <p>
-  <strong>Private:</strong>
+  <strong>Owner:</strong>
+  <%= @image.user.name %>
+</p>
+
+<p>
+  <strong>Allow Access to</strong>
   <%= @image.private %>
+  <%= render 'accesses/form' %>
 </p>
 
 <p>
@@ -25,8 +44,6 @@
    <% end %>
   </tbody>
 </table>
-<br>
-<br>
 
 <%= render 'tags/form' %>
 
