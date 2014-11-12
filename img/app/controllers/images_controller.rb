@@ -28,7 +28,8 @@ class ImagesController < ApplicationController
   def create
     @image = Image.new(image_params)
     @image.generate_filename
-    #@image.user = current_user
+    @image.user = current_user
+    
 
     @uploaded_io = params[:image][:uploaded_file]
 

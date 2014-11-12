@@ -1,31 +1,38 @@
-<h1>Listing images</h1>
-
+<h1><%=current_user.name %>'s' images</h1>
 <table>
-  <thead>
-    <tr>
-      <th>Filename</th>
-      <th>Private</th>
-      <th>User</th>
-      <th>Tag</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
   <tbody>
     <% @images.each do |image| %>
-      <tr>
-        <td><%= image_tag root_url + "/images/" + image.filename, size: "100x100", alt: image.filename %></td>
-        <td><%= image.filename %></td>
-        <td><%= image.private %></td>
+      <% if image.private == "1" then %>
+        <tr>
+          <td><%= image_tag root_url + "/images/" + image.filename, size: "100x100", alt: image.filename %></td>
+          <td><%= image.private %></td>
 
-        <td><%= link_to 'Show', image %></td>
-        <td><%= link_to 'Edit', edit_image_path(image) %></td>
-        <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+          <td><%= link_to 'Show', image %></td>
+          <td><%= link_to 'Edit', edit_image_path(image) %></td>
+          <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<h1>Public Images</h1>
+<table>
+  <tbody>
+    <% @images.each do |image| %>
+      <% if image.private == "0" then %>
+        <tr>
+          <td><%= image_tag root_url + "/images/" + image.filename, size: "100x100", alt: image.filename %></td>
+          <td><%= image.private %></td>
+
+          <td><%= link_to 'Show', image %></td>
+          <td><%= link_to 'Edit', edit_image_path(image) %></td>
+          <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'New Image', new_image_path %>

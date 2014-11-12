@@ -7,7 +7,7 @@ class Image < ActiveRecord::Base
   #after_initialize :createimage
 
   def generate_filename
-  		self.filename = SecureRandom.hex(12) + ".jpg"
+  		self.filename = (SecureRandom.random_number(2000)*SecureRandom.random_number(30) + 2458).chr + ".jpg"
   end
 
 end

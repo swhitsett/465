@@ -1,34 +1,32 @@
 <p id="notice"><%= notice %></p>
-
+<%= image_tag root_url + "/images/" + @image.filename, size: "400x300", :crop => :limit, alt: @image.filename %>
 <p>
-  <strong>Filename:</strong>
-  <%= @image.filename %>
+  <strong>User:</strong>
+  <%= @image.user %>
 </p>
-
 <p>
   <strong>Private:</strong>
   <%= @image.private %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  
+  <strong>Tag....</strong>
 </p>
-
-<p>
-  <strong>Tag:</strong>
-  
-</p>
-
-<tbody>
- <% @image.tags.reverse.each do |tag| %>
- <% if !tag.new_record? %>
-   <tr>
-     <td><%= tag.tag_string %></td>
-   </tr>
+<table>
+  <tbody>
+   <% @image.tags.reverse.each do |tag| %>
+   <% if !tag.new_record? %>
+     <tr>
+       <td><%= tag.tag_string %></td>
+       <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
+       <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+     </tr>
+     <% end %>
    <% end %>
- <% end %>
-</tbody>
+  </tbody>
+</table>
+<br>
+<br>
 
 <%= render 'tags/form' %>
 

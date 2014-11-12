@@ -11,22 +11,11 @@
       </ul>
     </div>
   <% end %>
-
+  <br>
+  <br>
   <div class="field">
-    <%= f.label :filename %><br>
-    <%= f.text_field :filename %>
-  </div>
-  <div class="field">
-    <%= f.label :private %><br>
-    <%= f.text_field :private %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :tag_id %><br>
-    <%= f.text_field :tag_id %>
+    <%= f.label :private, "Private Image??" %>
+    <%= f.check_box :private %>
   </div>
   <div class="actions">
     <%= f.submit %>
