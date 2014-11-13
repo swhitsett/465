@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 <%= image_tag root_url + "/images/" + @image.filename, size: "400x300", :crop => :limit, alt: @image.filename %>
+<br>
+<strong>This Image Belongs To:</strong>
+<%= @image.user.name %>
+<br>
 
-<p>
+<% if current_user.id == @image.user_id then %>
   <%= form_for @image do |p| %>
     <strong>This image is </strong>
     <% if @image.private == "1" %>
@@ -12,33 +16,22 @@
       <%= p.check_box :private %>
       <%= p.submit "update" %>
   <% end %>
-
-  </div>
-
-</p>
-
-<p>
-  <strong>Owner:</strong>
-  <%= @image.user.name %>
-</p>
-
-<p>
-  <strong>Allow Access to</strong>
-  <% @image.accesses.each do |a| %>
-    <% @user.each do |u| %>
-      <% if u.id == a.user_id then %>
-        <%= u.name %>
-        <%= link_to 'Destroy', a, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% if @image.private == "1" then %>
+    <strong>Allow Access to</strong>
+    <% @image.accesses.each do |a| %>
+      <% @user.each do |u| %>
+        <% if u.id == a.user_id then %>
+          <%= u.name %>
+          <%= link_to 'Destroy', a, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
       <% end %>
     <% end %>
+    <%= render 'accesses/form' %>
   <% end %>
-  <%= render 'accesses/form' %>
-</p>
+<% end %>
 
-<p>
-<strong>Tags....</strong>
-</p>
 <table>
+  <strong>Tags....</strong>
   <tbody>
    <% @image.tags.reverse.each do |tag| %>
    <% if !tag.new_record? %>
