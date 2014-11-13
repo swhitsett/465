@@ -37,7 +37,7 @@
 <table>
   <tbody>
     <% @images.each do |image| %>
-      <% @access.each do |a| %>
+      <% image.accesses.each do |a| %>
         <% if image.private == "1" && a.user_id == current_user.id then %>
           <tr>
             <td><%= image_tag root_url + "/images/" + image.filename, size: "100x100", alt: image.filename %></td>
@@ -49,3 +49,5 @@
     <% end %>
   </tbody>
 </table>
+
+

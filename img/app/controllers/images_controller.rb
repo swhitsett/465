@@ -6,6 +6,7 @@ class ImagesController < ApplicationController
   def index
     @images = Image.all
     @access = Access.all
+    # @user = User.all
   end
 
   # GET /images/1
@@ -13,7 +14,7 @@ class ImagesController < ApplicationController
   def show
     @tag = @image.tags.new
     @access = @image.accesses.new
-    @user = User.all
+    
   end
 
   # GET /images/new
