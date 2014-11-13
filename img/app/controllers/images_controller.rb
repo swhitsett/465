@@ -5,6 +5,7 @@ class ImagesController < ApplicationController
   # GET /images.json
   def index
     @images = Image.all
+    @access = Access.all
   end
 
   # GET /images/1
@@ -12,6 +13,7 @@ class ImagesController < ApplicationController
   def show
     @tag = @image.tags.new
     @access = @image.accesses.new
+    @user = User.all
   end
 
   # GET /images/new

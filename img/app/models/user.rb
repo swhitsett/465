@@ -6,7 +6,4 @@ class User < ActiveRecord::Base
   has_many :access
   has_many :images, through: :access
 
-  def gimmie
-  	name
-  end
 end

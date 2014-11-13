@@ -1,10 +1,10 @@
 <%= form_for([@image, @access]) do |f| %>
-  <% if @tag.errors.any? %>
+  <% if @access.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@tag.errors.count, "error") %> prohibited this tag from being saved:</h2>
+      <h2><%= pluralize(@access.errors.count, "error") %> prohibited this access from being saved:</h2>
 
       <ul>
-      <% @tag.errors.full_messages.each do |message| %>
+      <% @access.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -12,8 +12,12 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :image_id %><br>
+    <%= f.text_field :image_id %>
+  </div>
+  <div class="field">
     <%= f.label :user_id %><br>
-    <%= select_tag :user_id, options_for_select(User.all.map{|u| [u.name, u.id]}) %>
+    <%= select_tag :user_id, options_for_select(User.all.map{|u| [[u.name, u.email], u.id]}) %>
   </div>
   <div class="actions">
     <%= f.submit %>

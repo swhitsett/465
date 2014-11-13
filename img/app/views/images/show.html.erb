@@ -24,12 +24,19 @@
 
 <p>
   <strong>Allow Access to</strong>
-  <%= @image.private %>
+  <% @image.accesses.each do |a| %>
+    <% @user.each do |u| %>
+      <% if u.id == a.user_id then %>
+        <%= u.name %>
+        <%= link_to 'Destroy', a, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    <% end %>
+  <% end %>
   <%= render 'accesses/form' %>
 </p>
 
 <p>
-  <strong>Tag....</strong>
+<strong>Tags....</strong>
 </p>
 <table>
   <tbody>

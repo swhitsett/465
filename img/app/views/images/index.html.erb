@@ -1,3 +1,4 @@
+<%= link_to 'New Image', new_image_path %>
 <h1><%=current_user.name %>'s images</h1>
 <table>
   <tbody>
@@ -5,8 +6,6 @@
       <% if image.private == "1" && image.user_id == current_user.id then %>
         <tr>
           <td><%= image_tag root_url + "/images/" + image.filename, size: "100x100", alt: image.filename %></td>
-          <td><%= image.private %></td>
-
           <td><%= link_to 'Show', image %></td>
           <td><%= link_to 'Edit', edit_image_path(image) %></td>
           <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -16,7 +15,6 @@
   </tbody>
 </table>
 
-<br>
 <h1>Public Images</h1>
 <table>
   <tbody>
@@ -35,4 +33,19 @@
   </tbody>
 </table>
 
-<%= link_to 'New Image', new_image_path %>
+<h1>Given Access to these Images</h1>
+<table>
+  <tbody>
+    <% @images.each do |image| %>
+      <% @access.each do |a| %>
+        <% if image.private == "1" && a.user_id == current_user.id then %>
+          <tr>
+            <td><%= image_tag root_url + "/images/" + image.filename, size: "100x100", alt: image.filename %></td>
+            <td><%= image.private %></td>
+            <td><%= link_to 'Show', image %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
