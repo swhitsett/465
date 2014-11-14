@@ -16,6 +16,7 @@
       <%= p.check_box :private %>
       <%= p.submit "update" %>
   <% end %>
+
   <% if @image.private == "1" then %>
     <strong>Allow Access to</strong>
     <% @image.accesses.each do |a| %>
@@ -28,24 +29,23 @@
     <% end %>
     <%= render 'accesses/form' %>
   <% end %>
-<% end %>
 
-<table>
-  <strong>Tags....</strong>
-  <tbody>
-   <% @image.tags.reverse.each do |tag| %>
-   <% if !tag.new_record? %>
-     <tr>
-       <td><%= tag.tag_string %></td>
-       <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
-       <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-     </tr>
+  <table>
+    <strong>Tags....</strong>
+    <tbody>
+     <% @image.tags.reverse.each do |tag| %>
+     <% if !tag.new_record? %>
+       <tr>
+         <td><%= tag.tag_string %></td>
+         <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
+         <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       </tr>
+       <% end %>
      <% end %>
-   <% end %>
-  </tbody>
-</table>
-
-<%= render 'tags/form' %>
+    </tbody>
+  </table>
+  <%= render 'tags/form' %>
+<% end %>
 
 <%= link_to 'Edit', edit_image_path(@image) %> |
 <%= link_to 'Back', images_path %>
