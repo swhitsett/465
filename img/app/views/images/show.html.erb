@@ -18,18 +18,19 @@
   <% end %>
 
   <% if @image.private == "1" then %>
-    <strong>Allow Access to</strong>
+    <strong>Allow Access to</strong><br>
     <% @image.accesses.each do |a| %>
       <% @user.each do |u| %>
         <% if u.id == a.user_id then %>
           <%= u.name %>
           <%= link_to 'Destroy', a, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <br>
         <% end %>
       <% end %>
     <% end %>
     <%= render 'accesses/form' %>
   <% end %>
-
+<% end %>
   <table>
     <strong>Tags....</strong>
     <tbody>
@@ -37,15 +38,17 @@
      <% if !tag.new_record? %>
        <tr>
          <td><%= tag.tag_string %></td>
-         <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
-         <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <% if @image.user_id == current_user.id %>
+           <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
+           <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <% end %>
        </tr>
        <% end %>
      <% end %>
     </tbody>
   </table>
   <%= render 'tags/form' %>
+<% if @image.user_id == current_user.id %>
+  <%= link_to 'Edit', edit_image_path(@image) %> 
 <% end %>
-
-<%= link_to 'Edit', edit_image_path(@image) %> |
 <%= link_to 'Back', images_path %>

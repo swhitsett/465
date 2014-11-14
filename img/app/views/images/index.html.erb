@@ -5,8 +5,7 @@
     <% @images.each do |image| %>
       <% if image.private == "1" && image.user_id == current_user.id then %>
         <tr>
-          <td><%= image_tag root_url + "/images/" + image.filename, size: "100x100", alt: image.filename %></td>
-          <td><%= link_to 'Show', image %></td>
+          <td><%= link_to (image_tag root_url + "/images/" + image.filename, size: "100x100", alt: image.filename), image %></td>
           <td><%= link_to 'Edit', edit_image_path(image) %></td>
           <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
@@ -21,12 +20,11 @@
     <% @images.each do |image| %>
       <% if image.private == "0" then %>
         <tr>
-          <td><%= image_tag root_url + "/images/" + image.filename, size: "100x100", alt: image.filename %></td>
-          <td><%= image.private %></td>
-
-          <td><%= link_to 'Show', image %></td>
-          <td><%= link_to 'Edit', edit_image_path(image) %></td>
-          <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to (image_tag root_url + "/images/" + image.filename, size: "100x100", alt: image.filename), image %></td>
+          <% if image.user_id == current_user.id %>
+            <td><%= link_to 'Edit', edit_image_path(image) %></td>
+            <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
         </tr>
       <% end %>
     <% end %>
@@ -40,9 +38,7 @@
       <% image.accesses.each do |a| %>
         <% if image.private == "1" && a.user_id == current_user.id then %>
           <tr>
-            <td><%= image_tag root_url + "/images/" + image.filename, size: "100x100", alt: image.filename %></td>
-            <td><%= image.private %></td>
-            <td><%= link_to 'Show', image %></td>
+            <td><%= link_to (image_tag root_url + "/images/" + image.filename, size: "100x100", alt: image.filename), image %></td>
           </tr>
         <% end %>
       <% end %>
