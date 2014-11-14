@@ -51,7 +51,7 @@ class TagsController < ApplicationController
   # PATCH/PUT /tags/1.json
   def update
     if @tag.update(tag_params)
-      redirect_to image_tag(@tag.image), notice: 'Tag was successfully updated.'
+      redirect_to (@tag.image), notice: 'Tag was successfully updated.'
     else
       render :edit
     end
@@ -71,7 +71,7 @@ class TagsController < ApplicationController
   def destroy
     @tag.destroy
     respond_to do |format|
-      format.html { redirect_to tags_url, notice: 'Tag was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Tag was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

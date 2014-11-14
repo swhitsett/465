@@ -1,17 +1,17 @@
 <%= link_to 'New Image', new_image_path %>
 <h1><%=current_user.name %>'s images</h1>
 <table>
-  <tbody>
+  <table>
     <% @images.each do |image| %>
       <% if image.private == "1" && image.user_id == current_user.id then %>
-        <tr>
+        <table>
           <td><%= link_to (image_tag root_url + "/images/" + image.filename, size: "100x100", alt: image.filename), image %></td>
           <td><%= link_to 'Edit', edit_image_path(image) %></td>
           <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+        </table>
       <% end %>
     <% end %>
-  </tbody>
+  </table>
 </table>
 
 <h1>Public Images</h1>

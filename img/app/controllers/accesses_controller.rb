@@ -44,7 +44,7 @@ class AccessesController < ApplicationController
     # respond_with(@access)
     @access.destroy
     respond_to do |format|
-      format.html { redirect_to images_url, notice: 'Image was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Image was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
