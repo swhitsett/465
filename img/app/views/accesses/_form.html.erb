@@ -17,10 +17,9 @@
 
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
+    <strong><%= f.label :user_id, "Known Users" %></strong><br>
     <%= select_tag :user_id, options_for_select(User.where("id <> ?", current_user.id).map {|u| ["#{u.name}  #{u.email}", u.id]}) %>
-  </div>
-  <div class="actions">
+
     <%= f.submit %>
   </div>
 <% end %>

@@ -1,4 +1,9 @@
 <h2>Log in</h2>
+
+<h1 style="color: blue">FaceEncyclopedia</h1>
+<br>
+<br>
+
 <% Image.all.each do |image| %>
   <% if image.private == "0" then %>
     <%= image_tag root_url + "/images/" + image.filename, size: "100x100", alt: image.filename %>

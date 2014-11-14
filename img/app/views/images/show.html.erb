@@ -17,7 +17,7 @@
       <%= p.check_box :private %>
       <%= p.submit "update" %>
   <% end %>
-
+<br>
   <% if @image.private == "1" then %>
     <strong>Allow Access to</strong><br>
     <% @image.accesses.each do |a| %>
@@ -32,6 +32,7 @@
     <%= render 'accesses/form' %>
   <% end %>
 <% end %>
+<br>
   <table>
     <strong>Tags....</strong>
     <tbody>
