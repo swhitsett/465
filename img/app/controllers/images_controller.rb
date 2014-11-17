@@ -32,8 +32,21 @@ class ImagesController < ApplicationController
   # POST /images.json
   def create
     @image = Image.new(image_params)
-    @image.generate_filename
+    @image.generate_filename  #using secureRandom im image.rb
     @image.user = current_user
+
+    #for random file id assingnment.
+    inArray = true
+    while inArray == true
+      @image.id = Random.rand(121) * Random.rand(257) + 9
+      inArray = false
+      Image.all.each do |iter|
+        if iter.id == @image.id
+          inArray = true
+          break
+        end
+      end
+    end
 
 
     @uploaded_io = params[:image][:uploaded_file]

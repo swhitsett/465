@@ -5,21 +5,21 @@ accesses = Access.create(
     { image_id: '4', user_id: '3' },
     { image_id: '1', user_id: '4' },
     { image_id: '4', user_id: '6' },
-    { image_id: '3', user_id: '5' },
+    { image_id: '3', user_id: '5' }
   ]
 )
 
 images = Image.create(
   [
     { filename: '1.jpg', private: '1', user_id: '1' },
-    { filename: '2.jpg', private: '0', user_id: '6' },
+    { filename: '2.jpg', private: '0', user_id: '5' },
     { filename: '3.jpg', private: '1', user_id: '1' },
     { filename: '4.jpg', private: '0', user_id: '3' },
     { filename: '5.jpg', private: '0', user_id: '2' },
     { filename: '6.jpg', private: '1', user_id: '5' },
     { filename: '7.jpg', private: '1', user_id: '3' },
     { filename: '8.jpg', private: '1', user_id: '4' },
-    { filename: '9.jpg', private: '0', user_id: '6' },
+    { filename: '9.jpg', private: '0', user_id: '2' },
     { filename: '10.jpg', private: '0', user_id: '4' },
     { filename: '11.jpg', private: '1', user_id: '4' }
     
