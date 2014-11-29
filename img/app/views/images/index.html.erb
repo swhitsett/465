@@ -1,5 +1,12 @@
 <%= link_to 'New Image', new_image_path %>
-<h1 style="color: blue">FaceEncyclopedia</h1>
+<%= form_tag(query_path, method: "get") do  %>
+
+    <%= label_tag(:query,"Search for User id") %> <br>
+    <%= text_field_tag(:query) %>
+    <%= submit_tag("Search") %>
+   
+<% end %>
+
 <h2><%=current_user.name %>'s images</h2>
 <table>
   <table>

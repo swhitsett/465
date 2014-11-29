@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   end
   devise_for :users
   root 'images#index'
-
+  get 'query',to: 'image#imgSearch'
 
 end

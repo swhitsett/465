@@ -28,6 +28,30 @@ class ImagesController < ApplicationController
 
   end
 
+  def imgSearch
+    @search_term = params[:query]
+    @image = Image.all
+    @search_result
+
+    @image.each do |iter|
+      iter.user.each do |u|
+        if u.name == @search_term
+          @search_result = u.name
+          break
+        end
+        if @search_result 
+          break 
+        end
+      end
+    end
+
+    render :show
+    # @search_result = Image.find_by(:name @search_term)
+
+    # if !@search_result
+    #   @possible_result = Doi.all.map { |doi| doi if /#{@search_term}/ =~ Image.name }.compact
+    # end
+  end
   # POST /images
   # POST /images.json
   def create
