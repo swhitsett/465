@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event desc:</strong>
+  <%= @event.event_desc %>
+</p>
+
+<p>
+  <strong>Event model:</strong>
+  <%= @event.event_model %>
+</p>
+
+<p>
+  <strong>Event year:</strong>
+  <%= @event.event_year %>
+</p>
+
+<p>
+  <strong>Event displacement:</strong>
+  <%= @event.event_displacement %>
+</p>
+
+<p>
+  <strong>Event weight:</strong>
+  <%= @event.event_weight %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @event.user %>
+</p>
+
+<p>
+  <strong>Track:</strong>
+  <%= @event.track %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

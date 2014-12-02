@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event_desc: MyString
+  event_model: MyString
+  event_year: 
+  event_displacement: 
+  event_weight: 
+  user_id: 
+  track_id: 
+
+two:
+  event_desc: MyString
+  event_model: MyString
+  event_year: 
+  event_displacement: 
+  event_weight: 
+  user_id: 
+  track_id: 

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  track_name: MyString
+  track_location: MyString
+  track_desc: MyString
+  image_id: 
+  event_id: 
+
+two:
+  track_name: MyString
+  track_location: MyString
+  track_desc: MyString
+  image_id: 
+  event_id: 

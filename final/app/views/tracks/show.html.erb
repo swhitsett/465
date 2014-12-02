@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Track name:</strong>
+  <%= @track.track_name %>
+</p>
+
+<p>
+  <strong>Track location:</strong>
+  <%= @track.track_location %>
+</p>
+
+<p>
+  <strong>Track desc:</strong>
+  <%= @track.track_desc %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @track.image %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @track.event %>
+</p>
+
+<%= link_to 'Edit', edit_track_path(@track) %> |
+<%= link_to 'Back', tracks_path %>
