@@ -3,9 +3,9 @@ class CreateCars < ActiveRecord::Migration
     create_table :cars do |t|
       t.string :car_make
       t.string :car_model
-      t.int :car_year
-      t.double :car_displacement
-      t.int :car_weight
+      t.integer :car_year
+      t.float :car_displacement
+      t.integer :car_weight
       t.string :car_desc
       t.references :image, index: true
 
