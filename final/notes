@@ -4,9 +4,7 @@ Track times
 add the gems
 
         gem "therubyracer"
-
         gem "less-rails"
-
         gem "twitter-bootstrap-rails"
 
 
@@ -36,13 +34,15 @@ Allowed to search events, cars, tracks
 user 
 	rails g devise User track:references car:references event:references
 tracks
-	rails g scaffold Track track_name:string track_location:string track_desc:string
+	rails g scaffold Track track_name:string track_location:string track_desc:string image:references event:references
 
 cars
-	rails g scaffold Car car_make:string car_model:string car_year:string 
+	rails g scaffold Car car_make:string car_model:string car_year:string car_displacement:double car_weight:int car_desc:string image:references 
+
 images
-	rails g scaffold Image image_fname:string cars:references
+	rails g scaffold Image image_fname:string track:references user:references car:references event:references
 event
-	rails g scaffold Event
+	rails g scaffold Event event_desc:string event_model:string event_year:int event_displacement:double event_weight:int user:references track:references
+
 access
-	rails g scaffold Access1
+	rails g scaffold Access track:references user:references event:references
