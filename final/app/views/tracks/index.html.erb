@@ -1,14 +1,25 @@
+<style>
+.style_image {
+  height: 400px; width: 1000px; overflow: hidden;
+}
+</style>
 
+<!-- <head>
+<link rel="stylesheet" type="text/css" href="/assets/bootstrap_and_overrides.css.less">
+</head> -->
+
+<body>
 <% @track.each do |track| %>
   <div>
     <div><%= track.track_name %></div>
     <div>
       <% @image.each do |image| %>
         <% if image.track_id == track.image_id %>
-          <%= link_to (image_tag root_url + "/images/" + image.image_fname, size: "100x100", alt: image.image_fname), image %>
+          <%= link_to (image_tag root_url + "/images/" + image.image_fname, :class => "style_image", alt: image.image_fname), track %>
         <% end %>
       <% end %>
     </div> 
     <br> 
   </div>
 <% end %>
+</body>

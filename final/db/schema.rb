@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20141207053731) do
   add_index "cars", ["image_id"], name: "index_cars_on_image_id"
 
   create_table "events", force: true do |t|
+    t.string   "event_name"
     t.string   "event_desc"
     t.string   "event_model"
     t.integer  "event_year"
