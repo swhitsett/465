@@ -12,6 +12,7 @@ class TracksController < ApplicationController
   # GET /tracks/1.json
   def show
     @image = Image.all
+    @imageBackground
   end
 
   # GET /tracks/new

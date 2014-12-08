@@ -1,36 +1,45 @@
-<p id="notice"><%= notice %></p>
-<h2><%= @track.track_name %></h2>
 <% @track.accesses.each do |a| %>
   <% @image.each do |image| %>
     <% if a.image_id == image.track_id %>
-      <%= image_tag root_url + "/images/" + image.image_fname, size: "1000x100", alt: image.image_fname %>
+      <% @imageBackground = root_url + "/images/" + image.image_fname %>
     <% end %>
   <% end %>  
 <% end %>
 
-<p>
-  <strong>Track location:</strong>
-  <%= @track.track_location %>
-</p>
+<style>
+  
+  div { color: white;}
+  a { color: blue;}
 
-<div class="row">
-  <div class ="col-xs-6">
-    <strong>Track desc:</strong>
-    <%= @track.track_desc %>
+</style>
+
+<body style="background-image: url(<%= @imageBackground %>)">
+  <%= link_to 'Back', tracks_path %>
+  <p id="notice"><%= notice %></p>
+  <h2><%= @track.track_name %></h2>
+
+  <p>
+    <strong>Track location:</strong>
+    <%= @track.track_location %>
+  </p>
+
+  <div class="row">
+    <div class ="col-xs-6">
+      <strong>Track desc:</strong>
+      <%= @track.track_desc %>
+    </div>
+    <div class ="col-xs-6">
+      track times
+    </div> 
   </div>
-  <div class ="col-xs-6">
-    track times
-  </div> 
-</div>
 
-<br>
-<strong>Event Available Events:</strong>
-<div>
+  <br>
+  <strong>Event Available Events:</strong>
   <div>
-    <% @track.events.reverse.each do |event| %>
-      <div><%= link_to event.event_name, event %></div>
-    <% end %>
+    <div>
+      <% @track.events.reverse.each do |event| %>
+        <div><%= link_to event.event_name, event %></div>
+      <% end %>
+    </div>
   </div>
-</div>
-
-<%= link_to 'Back', tracks_path %>
+</body>
