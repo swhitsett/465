@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :l_times
+
+  devise_for :users
   resources :homes
 
   resources :accesses
