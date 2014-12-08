@@ -6,6 +6,7 @@ class CreateTracks < ActiveRecord::Migration
       t.string :track_desc
       t.references :image, index: true
       t.references :event, index: true
+      t.references :access, index: true
 
       t.timestamps
     end

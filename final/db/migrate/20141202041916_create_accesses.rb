@@ -4,6 +4,7 @@ class CreateAccesses < ActiveRecord::Migration
       t.references :track, index: true
       t.references :user, index: true
       t.references :event, index: true
+      t.references :image, index: true
 
       t.timestamps
     end

@@ -6,6 +6,7 @@ class CreateImages < ActiveRecord::Migration
       t.references :user, index: true
       t.references :car, index: true
       t.references :event, index: true
+      t.references :access, index: true
 
       t.timestamps
     end

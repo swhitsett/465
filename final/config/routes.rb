@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :homes
+
   resources :accesses
 
   resources :events
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :tracks
   
-  root 'tracks#index'
+  root 'homes#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

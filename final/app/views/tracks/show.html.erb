@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<% @track.accesses.each do |a| %>
+  <% @image.each do |image| %>
+    <% if a.image_id == image.track_id %>
+      <%= image_tag root_url + "/images/" + image.image_fname, size: "100x100", alt: image.image_fname %>
+    <% end %>
+  <% end %>  
+<% end %>
 <p>
   <strong>Track name:</strong>
   <%= @track.track_name %>
@@ -16,14 +23,13 @@
 </p>
 
 <p>
-  <strong>Image:</strong>
+  <strong>Images:</strong>
   <%= @track.image %>
 </p>
 
 <p>
-  <strong>Event:</strong>
+  <strong>Event Available Events:</strong>
   <%= @track.event %>
 </p>
 
-<%= link_to 'Edit', edit_track_path(@track) %> |
 <%= link_to 'Back', tracks_path %>

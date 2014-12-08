@@ -4,12 +4,14 @@ class TracksController < ApplicationController
   # GET /tracks
   # GET /tracks.json
   def index
-    @tracks = Track.all
+    @track = Track.all
+    @image = Image.all
   end
 
   # GET /tracks/1
   # GET /tracks/1.json
   def show
+    @image = Image.all
   end
 
   # GET /tracks/new
