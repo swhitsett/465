@@ -13,7 +13,7 @@
 
 </style>
 
-<body style="background-image: url(<%= @imageBackground %>)">
+<body style="background-image: url(<%= @imageBackground %>); ">
   <%= link_to 'Back', tracks_path %>
   <p id="notice"><%= notice %></p>
   <h2><%= @track.track_name %></h2>
@@ -30,10 +30,10 @@
     </div>
     <div class ="col-xs-6">
       <% @track.ttimes.each do |time| %>
-        <%= time.minutes %>
+        <%= time.minutes.to_s+":"+time.seconds.to_s+":"+time.miliseconds.to_s %>
         <% @cars.each do |car| %>
           <% if time.car_id == car.id && time.track_id == @track.id %>
-            <%= car.car_model %>
+            <%= link_to( car.car_year.to_s+" "+car.car_model, car) %>
           <% end %>
         <% end %>
       <% end %>

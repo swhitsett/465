@@ -1,23 +1,11 @@
 <h1>Listing homes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @homes.each do |home| %>
-      <tr>
-        <td><%= link_to 'Show', home %></td>
-        <td><%= link_to 'Edit', edit_home_path(home) %></td>
-        <td><%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+  <% @image.each do |image| %>
+    <% if image.id == 123 %>
+      <% @imageBackground = root_url + "/images/" + image.image_fname %>
     <% end %>
-  </tbody>
-</table>
+  <% end %>  
 
-<br>
-
-<%= link_to 'New Home', new_home_path %>
+<body style="background-image: url(<%= @imageBackground %>); ">
+afsd
+</body>
