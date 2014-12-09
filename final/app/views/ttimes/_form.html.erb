@@ -1,0 +1,41 @@
+<%= form_for(@ttime) do |f| %>
+  <% if @ttime.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ttime.errors.count, "error") %> prohibited this ttime from being saved:</h2>
+
+      <ul>
+      <% @ttime.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :minutes %><br>
+    <%= f.number_field :minutes %>
+  </div>
+  <div class="field">
+    <%= f.label :seconds %><br>
+    <%= f.number_field :seconds %>
+  </div>
+  <div class="field">
+    <%= f.label :miliseconds %><br>
+    <%= f.number_field :miliseconds %>
+  </div>
+  <div class="field">
+    <%= f.label :car_id %><br>
+    <%= f.text_field :car_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :track_id %><br>
+    <%= f.text_field :track_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

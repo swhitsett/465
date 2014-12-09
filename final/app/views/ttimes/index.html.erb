@@ -1,0 +1,35 @@
+<h1>Listing ttimes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Minutes</th>
+      <th>Seconds</th>
+      <th>Miliseconds</th>
+      <th>Car</th>
+      <th>User</th>
+      <th>Track</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ttimes.each do |ttime| %>
+      <tr>
+        <td><%= ttime.minutes %></td>
+        <td><%= ttime.seconds %></td>
+        <td><%= ttime.miliseconds %></td>
+        <td><%= ttime.car %></td>
+        <td><%= ttime.user %></td>
+        <td><%= ttime.track %></td>
+        <td><%= link_to 'Show', ttime %></td>
+        <td><%= link_to 'Edit', edit_ttime_path(ttime) %></td>
+        <td><%= link_to 'Destroy', ttime, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ttime', new_ttime_path %>

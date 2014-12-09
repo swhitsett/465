@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Minutes:</strong>
+  <%= @ttime.minutes %>
+</p>
+
+<p>
+  <strong>Seconds:</strong>
+  <%= @ttime.seconds %>
+</p>
+
+<p>
+  <strong>Miliseconds:</strong>
+  <%= @ttime.miliseconds %>
+</p>
+
+<p>
+  <strong>Car:</strong>
+  <%= @ttime.car %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @ttime.user %>
+</p>
+
+<p>
+  <strong>Track:</strong>
+  <%= @ttime.track %>
+</p>
+
+<%= link_to 'Edit', edit_ttime_path(@ttime) %> |
+<%= link_to 'Back', ttimes_path %>

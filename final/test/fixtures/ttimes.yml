@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  minutes: 1
+  seconds: 1
+  miliseconds: 1
+  car_id: 
+  user_id: 
+  track_id: 
+
+two:
+  minutes: 1
+  seconds: 1
+  miliseconds: 1
+  car_id: 
+  user_id: 
+  track_id: 
