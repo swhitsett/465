@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :l_times
+  resources :ttimes
 
   devise_for :users
   resources :homes

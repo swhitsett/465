@@ -29,7 +29,14 @@
       <%= @track.track_desc %>
     </div>
     <div class ="col-xs-6">
-      track times
+      <% @track.ttimes.each do |time| %>
+        <%= time.minutes %>
+        <% @cars.each do |car| %>
+          <% if time.car_id == car.id && time.track_id == @track.id %>
+            <%= car.car_model %>
+          <% end %>
+        <% end %>
+      <% end %>
     </div> 
   </div>
 

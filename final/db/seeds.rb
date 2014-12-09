@@ -31,3 +31,15 @@ events = Event.create(
     { event_name: 'Dont Crash', track_id: '3'}
   ]
 )
+
+cars = Car.create(
+  [
+    { car_make: 'Ford', car_model: 'Mustang', car_year: '1992', car_displacement: '5.0', car_weight: '3000' }
+  ]
+)
+
+ttimes = Ttime.create(
+  [
+    { minutes: '2', seconds: '12', miliseconds: '123', car_id: '1', track_id: '1' }
+  ]
+)

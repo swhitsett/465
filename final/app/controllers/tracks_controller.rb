@@ -13,6 +13,7 @@ class TracksController < ApplicationController
   def show
     @image = Image.all
     @imageBackground
+    @cars = Car.all
   end
 
   # GET /tracks/new

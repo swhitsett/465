@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208231321) do
+ActiveRecord::Schema.define(version: 20141209071214) do
 
   create_table "accesses", force: true do |t|
     t.integer  "track_id"
@@ -79,23 +79,11 @@ ActiveRecord::Schema.define(version: 20141208231321) do
   add_index "images", ["track_id"], name: "index_images_on_track_id"
   add_index "images", ["user_id"], name: "index_images_on_user_id"
 
-  create_table "l_times", force: true do |t|
-    t.integer  "posted_time"
-    t.integer  "car_id"
-    t.integer  "user_id"
-    t.integer  "track_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "l_times", ["car_id"], name: "index_l_times_on_car_id"
-  add_index "l_times", ["track_id"], name: "index_l_times_on_track_id"
-  add_index "l_times", ["user_id"], name: "index_l_times_on_user_id"
-
   create_table "tracks", force: true do |t|
     t.string   "track_name"
     t.string   "track_location"
     t.string   "track_desc"
+    t.integer  "l_time_id"
     t.integer  "image_id"
     t.integer  "event_id"
     t.integer  "access_id"
@@ -106,6 +94,22 @@ ActiveRecord::Schema.define(version: 20141208231321) do
   add_index "tracks", ["access_id"], name: "index_tracks_on_access_id"
   add_index "tracks", ["event_id"], name: "index_tracks_on_event_id"
   add_index "tracks", ["image_id"], name: "index_tracks_on_image_id"
+  add_index "tracks", ["l_time_id"], name: "index_tracks_on_l_time_id"
+
+  create_table "ttimes", force: true do |t|
+    t.integer  "minutes"
+    t.integer  "seconds"
+    t.integer  "miliseconds"
+    t.integer  "car_id"
+    t.integer  "user_id"
+    t.integer  "track_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ttimes", ["car_id"], name: "index_ttimes_on_car_id"
+  add_index "ttimes", ["track_id"], name: "index_ttimes_on_track_id"
+  add_index "ttimes", ["user_id"], name: "index_ttimes_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"
