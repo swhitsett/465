@@ -1,0 +1,7 @@
+<%= current_user.name %>
+
+<% @cars.each do |car| %>
+	<% if current_user.car_id == car.id %>
+		<% render 'cars/show' %>
+	<% end %>
+<% end %>
