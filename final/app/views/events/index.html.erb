@@ -1,9 +1,17 @@
 <h1>Listing events</h1>
 
-<% @events.each do |event| %>
-  <%= link_to event.event_name, event %><br>
-      <!-- <td><%= link_to 'Show', event %></td>
-      <td><%= link_to 'Edit', edit_event_path(event) %></td>
-      <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-      <!-- <%= link_to 'New Event', new_event_path %> -->
-<% end %>
+<div class="row">
+  <div class ="col-xs-6">
+    <% @events.each do |event| %>
+      <%= link_to event.event_name, event %><br>
+          <!-- <td><%= link_to 'Show', event %></td>
+          <td><%= link_to 'Edit', edit_event_path(event) %></td>
+          <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+          <!-- <%= link_to 'New Event', new_event_path %> -->
+    <% end %>
+  </div>
+  <div class ="col-xs-6">
+
+  </div> 
+</div>
+

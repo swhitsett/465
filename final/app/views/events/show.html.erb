@@ -1,39 +1,53 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Event desc:</strong>
-  <%= @event.event_desc %>
-</p>
 
-<p>
-  <strong>Event model:</strong>
-  <%= @event.event_model %>
-</p>
 
-<p>
-  <strong>Event year:</strong>
-  <%= @event.event_year %>
-</p>
 
-<p>
-  <strong>Event displacement:</strong>
-  <%= @event.event_displacement %>
-</p>
+<div class="row">
+    <div class ="col-xs-6">
+      <p>
+        <strong>Event desc:</strong>
+        <%= @event.event_desc %>
+      </p>
 
-<p>
-  <strong>Event weight:</strong>
-  <%= @event.event_weight %>
-</p>
+      <p>
+        <strong>Event model:</strong>
+        <%= @event.event_model %>
+      </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @event.user %>
-</p>
+      <p>
+        <strong>Event year:</strong>
+        <%= @event.event_year %>
+      </p>
 
-<p>
-  <strong>Track:</strong>
-  <%= @event.track %>
-</p>
+      <p>
+        <strong>Event displacement:</strong>
+        <%= @event.event_displacement %>
+      </p>
+
+      <p>
+        <strong>Event weight:</strong>
+        <%= @event.event_weight %>
+      </p>
+
+      <p>
+        <strong>User:</strong>
+        <%= @event.user %>
+      </p> 
+      <br>
+      <br>  
+    </div>
+    <div class ="col-xs-6">
+      <% @image.each do |image| %>
+        <% if image.id == @event.track_id %>
+          <% @track = @track.find(@event.track_id) %>
+          <strong><%= @track.track_name %></strong>
+          <%= link_to (image_tag root_url + "/images/" + image.image_fname, size: "600x320", alt: image.image_fname), @track %>
+        <% end %>
+      <% end %>
+    </div> 
+  </div>
+
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Back', :back %>

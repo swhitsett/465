@@ -9,6 +9,7 @@ class CreateEvents < ActiveRecord::Migration
       t.integer :event_weight
       t.references :user, index: true
       t.references :track, index: true
+      t.references :image, index: true
 
       t.timestamps
     end
