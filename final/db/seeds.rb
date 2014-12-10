@@ -26,8 +26,8 @@ accesses = Access.create(
 
 events = Event.create(
   [
-    { event_name: 'Go Super Fast', track_id: '1' },
-    { event_name: 'Beginer tranning event', track_id: '2'},
+    { event_name: 'Go Super Fast', track_id: '1', event_desc: 'a;sghaosbvoehoaieho;ghof;aoiehoigha;ohgoaif;nc', event_model: 'Mercedes-Benz', event_model: 'C-class'},
+    { event_name: 'Beginer tranning event', track_id: '2', event_desc: 'a;sghaosbvoehoaieho;ghof;aoiehfasdfadffffasdfoigha;ohgoaif;nc', event_model: 'Chevrolet', event_model: 'Camaro', event_year: '1969', event_displacement: '5.7'},
     { event_name: 'Open Track day', track_id: '3'},
     { event_name: 'Dont Crash', track_id: '3'}
   ]
@@ -44,3 +44,16 @@ ttimes = Ttime.create(
     { minutes: '2', seconds: '88', miliseconds: '123', car_id: '1', track_id: '1' }
   ]
 )
+
+users = User.create(
+  [
+    {name: 'a', email: 'a@a.com', password: 'a', password_confirmation: 'a'},
+    { name: 'pual', email: 'p@p.com', password: 'p', password_confirmation: 'p'},
+    { name: 'ron', email: 'r@r.com', password: 'r', password_confirmation: 'r'},
+    { name: 'yamborgini', email: 'y@y.com', password: 'y', password_confirmation: 'y'},
+    { name: 'Elmo', email: 'e@e.com', password: 'e', password_confirmation: 'e'},
+    { name: 'Swanson Ron', email: 'rule@internet.com', password: 'cat', password_confirmation: 'kitty'},
+    { name: 'taco bell', email: 'taco@tacobell.com', password: 'taco', password_confirmation: 'shell'}
+  ]
+
+  )

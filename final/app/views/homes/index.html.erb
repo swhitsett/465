@@ -1,11 +1,11 @@
-<h1>Listing homes</h1>
-
+<div style="color: White;">
+  <h1>Track Times</h1>
+</div>
   <% @image.each do |image| %>
-    <% if image.id == 123 %>
-      <% @imageBackground = root_url + "/images/" + image.image_fname %>
+    <% if image.track_id == 123 %>
+      <% @imageBackground = root_url + "/images/" + "LBW-458-Challenge-03.jpg" %>
     <% end %>
   <% end %>  
 
-<body style="background-image: url(<%= @imageBackground %>); ">
-afsd
+<body style="background-image: url(<%= @imageBackground %>);">
 </body>
