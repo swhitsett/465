@@ -1,3 +1,6 @@
+PUBLISHABLE_KEY=pk_test_9WLzu1ZGAgVjleaqI3Lz5gOb SECRET_KEY=sk_test_Ow2i53O1A158gtCXC8GuhhaV rails s
+
+
 Track times
 	allows a user to create an account with information about track time for their car.
 
