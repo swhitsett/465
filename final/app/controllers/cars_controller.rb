@@ -15,6 +15,8 @@ class CarsController < ApplicationController
   # GET /cars/new
   def new
     @car = Car.new
+    # @user = current_user
+    # @car = @user.cars.new
   end
 
   # GET /cars/1/edit
@@ -24,6 +26,15 @@ class CarsController < ApplicationController
   # POST /cars
   # POST /cars.json
   def create
+    # @user = current_user
+    # @car = @user.cars.new(car_params)
+
+    # if @car.save
+    #   redirect_to user_cars_url(@user), notice: "Your car was added"
+    # else
+    #   render :new
+    # end
+
     @car = Car.new(car_params)
 
     respond_to do |format|
@@ -69,6 +80,6 @@ class CarsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def car_params
-      params.require(:car).permit(:car_make, :car_model, :car_year, :car_displacement, :car_weight, :car_desc, :image_id)
+      params.require(:car).permit(:user_id, :car_make, :car_model, :car_year, :car_displacement, :car_weight, :car_desc, :image_id)
     end
 end

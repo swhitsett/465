@@ -6,6 +6,7 @@ class HomesController < ApplicationController
   def index
     @homes = Home.all
     @image = Image.all
+    @imageBackground
   end
 
   # GET /homes/1
