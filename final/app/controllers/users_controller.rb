@@ -4,5 +4,6 @@ class UsersController < ApplicationController
   	@cars = Car.all
   	@event = Event.all
   	@user = current_user
+  
   end
 end

@@ -1,37 +1,47 @@
+<style>
+.tinted-image {
+    background: 
+      linear-gradient(
+        rgba(0, 0, 0, 0.25), 
+        rgba(0, 0, 0, 0.25)
+      );
+    }
+</style>
 
-<div class="row">
- <div class ="col-xs-6">
- 	<h3>Registered Vehicles</h3>
- 	<% current_user.accesses.each do |a| %>
-	 	<% @cars.each do |car| %>
-			<% if a.car_id == car.id %>
-			  <strong>Car make:</strong>
-				  <%= car.car_make %><br>
-			  <strong>Car model:</strong>
-			  <%= car.car_model %><br>
-			  <strong>Car year:</strong>
-			  <%= car.car_year %><br>
-			  <strong>Car displacement:</strong>
-			  <%= car.car_displacement %><br>
-			  <strong>Car weight:</strong>
-			  <%= car.car_weight %><br>
-			  <strong>Car desc:</strong>
-			  <%= car.car_desc %><br>
-			  <br>	
+<body class="tinted-image">
+	<div class="row">
+	 <div class ="col-xs-6">
+	 	<h3>Registered Vehicles</h3>
+	 	<% current_user.accesses.each do |a| %>
+		 	<% @cars.each do |car| %>
+				<% if a.car_id == car.id %>
+				  <strong>Car make:</strong>
+					  <%= car.car_make %><br>
+				  <strong>Car model:</strong>
+				  <%= car.car_model %><br>
+				  <strong>Car year:</strong>
+				  <%= car.car_year %><br>
+				  <strong>Car displacement:</strong>
+				  <%= car.car_displacement %><br>
+				  <strong>Car weight:</strong>
+				  <%= car.car_weight %><br>
+				  <strong>Car desc:</strong>
+				  <%= car.car_desc %><br>
+				  <br>	
+				<% end %>
 			<% end %>
 		<% end %>
-	<% end %>
-	<%= render 'cars/form' %>
- </div>
- <div class ="col-xs-6">
- 	<h3>Upcoming Events</h3>
- 	<% @event.each do |event| %>
-	 	<% current_user.accesses.each do |a| %>
-	 		<% if a.user_id == current_user.id && event.id == a.event_id %>
-	 			<%= link_to event.event_name, event %>
-	 		<% end %>
-	 	<% end %>
-	<% end %>
- </div> 
-</div>
-
+		<%= link_to "Add a new car", new_car_path %>
+	 </div>
+	 <div class ="col-xs-6">
+	 	<h3>Upcoming Events</h3>
+	 	<% @event.each do |event| %>
+		 	<% current_user.accesses.each do |a| %>
+		 		<% if a.user_id == current_user.id && event.id == a.event_id %>
+		 			<%= link_to event.event_name, event %>
+		 		<% end %>
+		 	<% end %>
+		<% end %>
+	 </div> 
+	</div>
+</body>
