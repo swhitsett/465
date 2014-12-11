@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   resources :ttimes
 
   devise_for :users
+
+  resources :charges
+
   resources :homes
 
   resources :accesses
