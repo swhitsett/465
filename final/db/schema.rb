@@ -51,10 +51,12 @@ ActiveRecord::Schema.define(version: 20141209071214) do
     t.integer  "user_id"
     t.integer  "track_id"
     t.integer  "image_id"
+    t.integer  "access_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "events", ["access_id"], name: "index_events_on_access_id"
   add_index "events", ["image_id"], name: "index_events_on_image_id"
   add_index "events", ["track_id"], name: "index_events_on_track_id"
   add_index "events", ["user_id"], name: "index_events_on_user_id"

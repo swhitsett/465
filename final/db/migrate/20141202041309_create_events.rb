@@ -10,6 +10,7 @@ class CreateEvents < ActiveRecord::Migration
       t.references :user, index: true
       t.references :track, index: true
       t.references :image, index: true
+      t.references :access, index: true
 
       t.timestamps
     end

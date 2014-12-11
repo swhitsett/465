@@ -20,7 +20,8 @@ accesses = Access.create(
   [
     { image_id: '1', track_id: '1' },
     { image_id: '2', track_id: '2' },
-    { image_id: '3', track_id: '3'}
+    { image_id: '3', track_id: '3'},
+    { user_id: '1', event_id: '1'}
   ]
 )
 
@@ -47,7 +48,7 @@ ttimes = Ttime.create(
 
 users = User.create(
   [
-    {name: 'a', email: 'a@a.com', password: 'a', password_confirmation: 'a'},
+    {name: 'a', email: 'a@a.com', password: 'a', password_confirmation: 'a', car_id: '1'},
     { name: 'pual', email: 'p@p.com', password: 'p', password_confirmation: 'p'},
     { name: 'ron', email: 'r@r.com', password: 'r', password_confirmation: 'r'},
     { name: 'yamborgini', email: 'y@y.com', password: 'y', password_confirmation: 'y'},

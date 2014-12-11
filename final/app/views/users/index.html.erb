@@ -1,7 +1,34 @@
-<%= current_user.name %>
+<%= current_user.name %><br>
 
-<% @cars.each do |car| %>
-	<% if current_user.car_id == car.id %>
-		<% render 'cars/show' %>
+<div class="row">
+ <div class ="col-xs-6">
+ 	<% @cars.each do |car| %>
+		<% if current_user.car_id == car.id %>
+		  <strong>Car make:</strong>
+			  <%= car.car_make %><br>
+		  <strong>Car model:</strong>
+		  <%= car.car_model %><br>
+		  <strong>Car year:</strong>
+		  <%= car.car_year %><br>
+		  <strong>Car displacement:</strong>
+		  <%= car.car_displacement %><br>
+		  <strong>Car weight:</strong>
+		  <%= car.car_weight %><br>
+		  <strong>Car desc:</strong>
+		  <%= car.car_desc %><br>
+		  <br>	
+		<% end %>
 	<% end %>
-<% end %>
+ </div>
+ <div class ="col-xs-6">
+ 	<% @event.each do |event| %>
+	 	<% current_user.accesses.each do |a| %>
+	 		<% if a.user_id == current_user.id  %>
+	 			<% @event = @events.find(event.event_id) %>
+	 			<%= @event.event_name %>
+	 		<% end %>
+	 	<% end %>
+	<% end %>
+ </div> 
+</div>
+
