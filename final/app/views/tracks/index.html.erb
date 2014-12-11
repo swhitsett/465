@@ -1,17 +1,41 @@
 <style>
+  
+  div { color: white;}
+  a { color: #3399FF;}
+  a:visited { color: #B2B2CC;}
+  
+  .tinted-image {
+    background: 
+      linear-gradient(
+        rgba(0, 0, 0, 0.45), 
+        rgba(0, 0, 0, 0.45)
+      ),
+      url(<%= @imageBackground %>);
+  }
+</style>
+
+<style>
 .style_image {
   height: 400px; width: 1000px; overflow: hidden;
 }
+
+.tinted-image {
+    background: 
+      linear-gradient(
+        rgba(0, 0, 0, 0.25), 
+        rgba(0, 0, 0, 0.25)
+      );
+    }
 </style>
 
 <!-- <head>
 <link rel="stylesheet" type="text/css" href="/assets/bootstrap_and_overrides.css.less">
 </head> -->
 
-<body>
+<body class="tinted-image">
 <% @track.each do |track| %>
   <div>
-    <div><%= track.track_name %></div>
+    <h3 style="color:black"><%= track.track_name %></h3>
     <div>
       <% @image.each do |image| %>
         <% if image.track_id == track.image_id %>

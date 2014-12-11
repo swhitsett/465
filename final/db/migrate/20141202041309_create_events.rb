@@ -3,6 +3,7 @@ class CreateEvents < ActiveRecord::Migration
     create_table :events do |t|
       t.string :event_name
       t.string :event_desc
+      t.integer :cost
       t.string :event_model
       t.integer :event_year
       t.float :event_displacement

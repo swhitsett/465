@@ -9,11 +9,20 @@
 <style>
   
   div { color: white;}
-  a { color: blue;}
-
+  a { color: #3399FF;}
+  a:visited { color: #B2B2CC;}
+  
+  .tinted-image {
+    background: 
+      linear-gradient(
+        rgba(0, 0, 0, 0.45), 
+        rgba(0, 0, 0, 0.45)
+      ),
+      url(<%= @imageBackground %>);
+  }
 </style>
 
-<body style="background-image: url(<%= @imageBackground %>); ">
+<body class="tinted-image">
   <%= link_to 'Back', :back %>
   <p id="notice"><%= notice %></p>
   <h2><%= @track.track_name %></h2>
@@ -29,11 +38,12 @@
       <%= @track.track_desc %>
     </div>
     <div class ="col-xs-6">
-      <% @track.ttimes.each do |time| %>
+      <% @track.ttimes.order("minutes,seconds,miliseconds").each do |time| %>
         <%= time.minutes.to_s+":"+time.seconds.to_s+":"+time.miliseconds.to_s %>
+        &nbsp; &nbsp; 
         <% @cars.each do |car| %>
           <% if time.car_id == car.id && time.track_id == @track.id %>
-            <%= link_to( car.car_year.to_s+" "+car.car_model, car) %>
+            <%= link_to( car.car_year.to_s+" "+car.car_model, car) %><br>
           <% end %>
         <% end %>
       <% end %>

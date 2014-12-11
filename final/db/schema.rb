@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20141209071214) do
   create_table "events", force: true do |t|
     t.string   "event_name"
     t.string   "event_desc"
+    t.integer  "cost"
     t.string   "event_model"
     t.integer  "event_year"
     t.float    "event_displacement"
