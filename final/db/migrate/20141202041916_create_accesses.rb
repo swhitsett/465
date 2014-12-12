@@ -6,7 +6,7 @@ class CreateAccesses < ActiveRecord::Migration
       t.references :event, index: true
       t.references :image, index: true
       t.references :car, index: true
-
+      t.integer :registered
       t.timestamps
     end
   end

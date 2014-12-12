@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20141209071214) do
     t.integer  "event_id"
     t.integer  "image_id"
     t.integer  "car_id"
+    t.integer  "registered"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

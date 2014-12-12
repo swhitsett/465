@@ -47,26 +47,31 @@
       <% end %>
 
       <% current_user.accesses.each do |a| %>
-        <% if !(a.user_id == current_user.id && @event.id == a.event_id) && !a.event_id %>
-          <div>
-            <%= form_tag charges_path do %>
-              <article>
-                <label class="amount">
-                  <span>Registration: $<%= @event.cost.to_s.insert(@event.cost.to_s.length - 2,'.') %></span>
-                </label>
-              </article>
-
-              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                      data-description="Payment for: <%= @event.event_name %>"
-                      data-amount="<%=@event.cost%>"></script>
-            <% end %>  
-          </div>
-          <% break %>
-        <% else %>
-          <h4> You have already Registered for this Event </h4>
+        <% if a.user_id == current_user.id && @event.id == a.event_id %>
+          <% @inEvent = 1 %>
         <% end %>
       <% end %>
+      
+      <% if @inEvent == 0 %>
+        <div>
+          <%= form_tag charges_path do %>
+            <article>
+              <label class="amount">
+                <span>Registration: $<%= @event.cost.to_s.insert(@event.cost.to_s.length - 2,'.') %></span>
+              </label>
+            </article>
+
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="Payment for: <%= @event.event_name %>"
+                    data-amount="<%=@event.cost%>"></script>
+          <% end %>  
+        </div>
+      <% else %>
+        <h4>You are currently registered for this event</h4>
+      <% end %>
+
+
 
     </div>
     <div class ="col-xs-6">

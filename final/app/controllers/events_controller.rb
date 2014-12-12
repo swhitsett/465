@@ -13,6 +13,7 @@ class EventsController < ApplicationController
   def show
     @image = Image.all
     @track = Track.all
+    @inEvent = 0
   end
 
   # GET /events/new
