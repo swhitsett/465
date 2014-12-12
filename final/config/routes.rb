@@ -17,6 +17,10 @@ Rails.application.routes.draw do
 
   resources :tracks
   
+  resources :users do
+    resources :events, shallow: true
+  end
+
   root 'tracks#index'
   get 'users', to: 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.

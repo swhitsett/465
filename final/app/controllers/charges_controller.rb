@@ -7,10 +7,10 @@ class ChargesController < ApplicationController
     def create
       @access = Access.new
       # Amount in cents
-      @amount = 16500
+      @amount = 16500  #<%= @event.cost %>
 
       customer = Stripe::Customer.create(
-        :email => 'kongzero32@gmail.com',
+        :email => 'kongzero32@gmail.com', #<%= current_user.email %>
         :card  => params[:stripeToken]
       )
 

@@ -16,7 +16,7 @@ class CarsController < ApplicationController
   def new
     @car = Car.new
     # @user = current_user
-    # @car = @user.cars.new
+    @car = @user.cars.new
   end
 
   # GET /cars/1/edit

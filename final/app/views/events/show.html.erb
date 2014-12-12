@@ -65,6 +65,10 @@
                     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                     data-description="Payment for: <%= @event.event_name %>"
                     data-amount="<%=@event.cost%>"></script>
+                    <% @obj = Access.new %>
+                    <% @obj.registered = 1 %>
+                    <% @obj.track_id = 2 %>
+                    <% @obj.image_id = 2 %>
           <% end %>  
         </div>
       <% else %>
