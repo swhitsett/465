@@ -25,19 +25,22 @@
 <body class="tinted-image">
   <%= link_to 'Back', :back %>
   <p id="notice"><%= notice %></p>
+
   <h2><%= @track.track_name %></h2>
-
-  <p>
-    <strong>Track location:</strong>
-    <%= @track.track_location %>
-  </p>
-
+  
   <div class="row">
     <div class ="col-xs-6">
+
+      <p>
+        <strong>Track location:</strong>
+        <%= @track.track_location %>
+      </p>
+
       <strong>Track desc:</strong>
       <%= @track.track_desc %>
     </div>
     <div class ="col-xs-6">
+      <h4>Top times at <%=@track.track_name%></h4>
       <% @track.ttimes.order("minutes,seconds,miliseconds").each do |time| %>
         <%= time.minutes.to_s+":"+time.seconds.to_s+":"+time.miliseconds.to_s %>
         &nbsp; &nbsp; 

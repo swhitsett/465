@@ -22,6 +22,8 @@ class ChargesController < ApplicationController
       )
       
       @access.user_id = current_user.id
+      @access.event_id = 2
+      @access.registered = 1
       @access.save
       redirect_to :back, notice: 'Transiction was a sucuess'
 
