@@ -8,7 +8,7 @@ class CreateCars < ActiveRecord::Migration
       t.integer :car_weight
       t.string :car_desc
       t.references :image, index: true
-
+      t.references :user, index: true
       t.timestamps
     end
   end

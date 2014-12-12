@@ -12,24 +12,22 @@
 	<div class="row">
 	 <div class ="col-xs-6">
 	 	<h3>Registered Vehicles</h3>
-	 	<% current_user.accesses.each do |a| %>
-		 	<% @cars.each do |car| %>
-				<% if a.car_id == car.id %>
-				  <strong>Car make:</strong>
-					  <%= car.car_make %><br>
-				  <strong>Car model:</strong>
-				  <%= car.car_model %><br>
-				  <strong>Car year:</strong>
-				  <%= car.car_year %><br>
-				  <strong>Car displacement:</strong>
-				  <%= car.car_displacement %><br>
-				  <strong>Car weight:</strong>
-				  <%= car.car_weight %><br>
-				  <strong>Car desc:</strong>
-				  <%= car.car_desc %><br>
-				  <br>	
-				<% end %>
+	 	<% current_user.cars.each do |car| %>
+	 		<% if !car.new_record? %>
+			  <strong>Car make:</strong>
+			  <%= car.car_make %><br>
+			  <strong>Car model:</strong>
+			  <%= car.car_model %><br>
+			  <strong>Car year:</strong>
+			  <%= car.car_year %><br>
+			  <strong>Car displacement:</strong>
+			  <%= car.car_displacement %><br>
+			  <strong>Car weight:</strong>
+			  <%= car.car_weight %><br>
+			  <strong>Car desc:</strong>
+			  <%= car.car_desc %><br>
 			<% end %>
+		  <br>	
 		<% end %>
 		
 		<%= render 'cars/form' %>

@@ -27,8 +27,7 @@ accesses = Access.create(
     { user_id: '1', event_id: '1'},
     { user_id: '2', car_id: '3'},
     { user_id: '1', car_id: '5'},
-    { user_id: '1', car_id: '1'},
-    { user_id: '1', car_id: '1'},
+    { user_id: '1', car_id: '1'}
   ]
 )
 
@@ -43,11 +42,11 @@ events = Event.create(
 
 cars = Car.create(
   [
-    { car_make: 'Ford', car_model: 'Mustang', car_year: '1992', car_displacement: '5.0', car_weight: '3200' },
+    { user_id: '1', car_make: 'Ford', car_model: 'Mustang', car_year: '1992', car_displacement: '5.0', car_weight: '3200' },
     { car_make: 'Chevrolet', car_model: 'Corvette', car_year: '2007', car_displacement: '7.0', car_weight: '8955' },
     { car_make: 'BMW', car_model: 'M3', car_year: '2004', car_displacement: '4.0', car_weight: '3044' },
     { car_make: 'Mercedes-Benz', car_model: 'C63AMG', car_year: '2010', car_displacement: '5.0', car_weight: '4555' },
-    { car_make: 'Subuaru', car_model: 'STI', car_year: '2012', car_displacement: '5.0', car_weight: '3000' },
+    { user_id: '1', car_make: 'Subuaru', car_model: 'STI', car_year: '2012', car_displacement: '5.0', car_weight: '3000' },
     { car_make: 'Ferrai', car_model: '458', car_year: '2012', car_displacement: '4.8', car_weight: '3000' },
     { car_make: 'Aston Martin', car_model: 'DBS', car_year: '2012', car_displacement: '5.0', car_weight: '5233' },
     { car_make: 'Pagani', car_model: 'Zonda', car_year: '2005', car_displacement: '3.0', car_weight: '3700' },

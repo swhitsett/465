@@ -14,8 +14,8 @@ class CarsController < ApplicationController
 
   # GET /cars/new
   def new
-    @car = Car.new
-    # @user = current_user
+    # @car = Car.new
+    @user = current_user
     @car = @user.cars.new
   end
 
@@ -26,26 +26,26 @@ class CarsController < ApplicationController
   # POST /cars
   # POST /cars.json
   def create
-    # @user = current_user
-    # @car = @user.cars.new(car_params)
+    @user = current_user
+    @car = @user.cars.new(car_params)
 
-    # if @car.save
-    #   redirect_to user_cars_url(@user), notice: "Your car was added"
-    # else
-    #   render :new
-    # end
-
-    @car = Car.new(car_params)
-
-    respond_to do |format|
-      if @car.save
-        format.html { redirect_to @car, notice: 'Car was successfully created.' }
-        format.json { render :show, status: :created, location: @car }
-      else
-        format.html { render :new }
-        format.json { render json: @car.errors, status: :unprocessable_entity }
-      end
+    if @car.save
+      redirect_to users_path, notice: "Your car was added"
+    else
+      render :new
     end
+
+    # @car = Car.new(car_params)
+
+    # respond_to do |format|
+    #   if @car.save
+    #     format.html { redirect_to @car, notice: 'Car was successfully created.' }
+    #     format.json { render :show, status: :created, location: @car }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @car.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /cars/1
