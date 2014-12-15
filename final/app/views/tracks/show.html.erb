@@ -24,42 +24,48 @@
 
 <body class="tinted-image">
   <%= link_to 'Back', :back %>
-  <p id="notice"><%= notice %></p>
 
   <h2><%= @track.track_name %></h2>
   
   <div class="row">
     <div class ="col-xs-6">
-
-      <p>
+      <div>
         <strong>Track location:</strong>
         <%= @track.track_location %>
-      </p>
-
-      <strong>Track desc:</strong>
-      <%= @track.track_desc %>
+      </div>
+      <br>
+      <div>
+        <strong>Track Details</strong>
+        <%= @track.track_desc %>
+      </div>
+      <br>
+      <div>
+        <strong>Event Available Events:</strong>
+        <% @track.events.reverse.each do |event| %>
+          <li><%= link_to event.event_name, event %></li>
+        <% end %>
+      </div>
     </div>
     <div class ="col-xs-6">
       <h4>Top times at <%=@track.track_name%></h4>
-      <% @track.ttimes.order("minutes,seconds,miliseconds").each do |time| %>
-        <%= time.minutes.to_s+":"+time.seconds.to_s+":"+time.miliseconds.to_s %>
-        &nbsp; &nbsp; 
-        <% @cars.each do |car| %>
-          <% if time.car_id == car.id && time.track_id == @track.id %>
-            <%= link_to( car.car_year.to_s+" "+car.car_model, car) %><br>
+      <table>
+        <% @track.ttimes.order("minutes,seconds,miliseconds").each do |time| %>
+        <tr>
+          <td><%= time.minutes.to_s+":"+time.seconds.to_s+":"+time.miliseconds.to_s %></td>
+          <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <% @cars.each do |car| %>
+            <% if time.car_id == car.id && time.track_id == @track.id %>
+              <td><%= link_to( car.car_year.to_s+" "+car.car_model, car) %><td>
+            <% end %>
           <% end %>
+          </tr>
         <% end %>
-      <% end %>
+      </table>
+      <h4>Post your personal time</h4>
+      <%= render 'ttimes/form' %>
     </div> 
   </div>
 
   <br>
-  <strong>Event Available Events:</strong>
-  <div>
-    <div>
-      <% @track.events.reverse.each do |event| %>
-        <div><%= link_to event.event_name, event %></div>
-      <% end %>
-    </div>
-  </div>
+  
 </body>

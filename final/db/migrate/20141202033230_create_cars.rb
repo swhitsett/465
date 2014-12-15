@@ -9,6 +9,7 @@ class CreateCars < ActiveRecord::Migration
       t.string :car_desc
       t.references :image, index: true
       t.references :user, index: true
+      t.references :track, index: true
       t.timestamps
     end
   end

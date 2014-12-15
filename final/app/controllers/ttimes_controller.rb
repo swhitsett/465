@@ -19,9 +19,17 @@ class TtimesController < ApplicationController
   end
 
   def create
-    @ttime = Ttime.new(ttime_params)
-    @ttime.save
-    respond_with(@ttime)
+    @car = Car.find(params[:car_id])
+    @ttime = @car.ttimes.new(ttime_params)
+
+    if @ttime.save
+      redirect_to :back, notice: "Your time was added"
+    else
+      render :new
+    end
+    # @ttime = Ttime.new(ttime_params)
+    # @ttime.save
+    # respond_with(@ttime)
   end
 
   def update

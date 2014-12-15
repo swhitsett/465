@@ -1,3 +1,9 @@
+<style>
+ p {
+    color: black;
+ }
+</style>
+
 <%= form_for(@ttime) do |f| %>
   <% if @ttime.errors.any? %>
     <div id="error_explanation">
@@ -11,31 +17,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :minutes %><br>
-    <%= f.number_field :minutes %>
-  </div>
-  <div class="field">
+  <div class ="field" >
+    <%= f.label :car_id, "Your Cars" %><br>
+    <p><%= select_tag :car_id, options_for_select(Car.where("user_id = ?", current_user.id).map {|u| [ "#{u.car_year} #{u.car_model} #{u.car_make}", u.id]}) %></p>
+
+    <%= f.hidden_field :user_id %>
+    <%= hidden_field_tag :user_id, current_user.id %>
+
+    <%= f.hidden_field :track_id %>
+    <%= hidden_field_tag :track_id, @track.id %>
+
+    <%= f.label :minutes %>
+    <p><%= f.number_field :minutes %></p>
+
     <%= f.label :seconds %><br>
-    <%= f.number_field :seconds %>
-  </div>
-  <div class="field">
+    <p><%= f.number_field :seconds %></p>
+
     <%= f.label :miliseconds %><br>
-    <%= f.number_field :miliseconds %>
-  </div>
-  <div class="field">
-    <%= f.label :car_id %><br>
-    <%= f.text_field :car_id %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :track_id %><br>
-    <%= f.text_field :track_id %>
+    <p><%= f.number_field :miliseconds %></p>
+
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <p><%= f.submit %></p>
   </div>
 <% end %>

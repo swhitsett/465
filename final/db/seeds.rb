@@ -43,19 +43,19 @@ events = Event.create(
 cars = Car.create(
   [
     { user_id: '1', car_make: 'Ford', car_model: 'Mustang', car_year: '1992', car_displacement: '5.0', car_weight: '3200' },
-    { car_make: 'Chevrolet', car_model: 'Corvette', car_year: '2007', car_displacement: '7.0', car_weight: '8955' },
-    { car_make: 'BMW', car_model: 'M3', car_year: '2004', car_displacement: '4.0', car_weight: '3044' },
-    { car_make: 'Mercedes-Benz', car_model: 'C63AMG', car_year: '2010', car_displacement: '5.0', car_weight: '4555' },
-    { user_id: '1', car_make: 'Subuaru', car_model: 'STI', car_year: '2012', car_displacement: '5.0', car_weight: '3000' },
-    { car_make: 'Ferrai', car_model: '458', car_year: '2012', car_displacement: '4.8', car_weight: '3000' },
-    { car_make: 'Aston Martin', car_model: 'DBS', car_year: '2012', car_displacement: '5.0', car_weight: '5233' },
-    { car_make: 'Pagani', car_model: 'Zonda', car_year: '2005', car_displacement: '3.0', car_weight: '3700' },
-    { car_make: 'Dodge', car_model: 'Viper ACR', car_year: '2016', car_displacement: '6.2', car_weight: '3030' },
-    { car_make: 'Honda', car_model: 'Civic', car_year: '1992', car_displacement: '2.0', car_weight: '3000' },
-    { car_make: 'Ford', car_model: 'GT', car_year: '2004', car_displacement: '5.4', car_weight: '1234' },
-    { car_make: 'Lexus', car_model: 'ISF', car_year: '2012', car_displacement: '5.0', car_weight: '4568' },
-    { car_make: 'Ford', car_model: 'Mustang', car_year: '1992', car_displacement: '1.3', car_weight: '3000' },
-    { car_make: 'Ford', car_model: 'Mustang', car_year: '1992', car_displacement: '5.0', car_weight: '1234' },
+    { user_id: '2', car_make: 'Chevrolet', car_model: 'Corvette', car_year: '2007', car_displacement: '7.0', car_weight: '8955' },
+    { user_id: '3', car_make: 'BMW', car_model: 'M3', car_year: '2004', car_displacement: '4.0', car_weight: '3044' },
+    { user_id: '4', car_make: 'Mercedes-Benz', car_model: 'C63AMG', car_year: '2010', car_displacement: '5.0', car_weight: '4555' },
+    { user_id: '5', car_make: 'Subuaru', car_model: 'STI', car_year: '2012', car_displacement: '5.0', car_weight: '3000' },
+    { user_id: '6', car_make: 'Ferrai', car_model: '458', car_year: '2012', car_displacement: '4.8', car_weight: '3000' },
+    { user_id: '7', car_make: 'Aston Martin', car_model: 'DBS', car_year: '2012', car_displacement: '5.0', car_weight: '5233' },
+    { user_id: '8', car_make: 'Pagani', car_model: 'Zonda', car_year: '2005', car_displacement: '3.0', car_weight: '3700' },
+    { user_id: '9', car_make: 'Dodge', car_model: 'Viper ACR', car_year: '2016', car_displacement: '6.2', car_weight: '3030' },
+    { user_id: '10', car_make: 'Honda', car_model: 'Civic', car_year: '1992', car_displacement: '2.0', car_weight: '3000' },
+    { user_id: '11', car_make: 'Ford', car_model: 'GT', car_year: '2004', car_displacement: '5.4', car_weight: '1234' },
+    { user_id: '1', car_make: 'Lexus', car_model: 'ISF', car_year: '2012', car_displacement: '5.0', car_weight: '4568' },
+    { user_id: '2', car_make: 'Ford', car_model: 'Mustang', car_year: '1992', car_displacement: '1.3', car_weight: '3000' },
+    { user_id: '3', car_make: 'Ford', car_model: 'Mustang', car_year: '1992', car_displacement: '5.0', car_weight: '1234' },
 
   ]
 )
@@ -86,7 +86,11 @@ users = User.create(
     { name: 'ron', email: 'r@r.com', password: 'r', password_confirmation: 'r'},
     { name: 'yamborgini', email: 'y@y.com', password: 'y', password_confirmation: 'y'},
     { name: 'Elmo', email: 'e@e.com', password: 'e', password_confirmation: 'e'},
-    { name: 'Swanson Ron', email: 'rule@internet.com', password: 'cat', password_confirmation: 'kitty'},
+    { name: 'Ken Block', email: 'rule@internet.com', password: 'cat', password_confirmation: 'kitty'},
+    { name: 'Ron Jeremey', email: 'rule@internet.com', password: 'cat', password_confirmation: 'kitty'},
+    { name: 'Scarlet Johansen', email: 'rule@internet.com', password: 'cat', password_confirmation: 'kitty'},
+    { name: 'Tanner Foust', email: 'rule@internet.com', password: 'cat', password_confirmation: 'kitty'},
+    { name: 'JakeFromStateFarm', email: 'rule@internet.com', password: 'cat', password_confirmation: 'kitty'},
     { name: 'taco bell', email: 'taco@tacobell.com', password: 'taco', password_confirmation: 'shell'}
   ]
 

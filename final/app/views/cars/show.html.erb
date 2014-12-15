@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Owner:</strong>
+  <%= @driver %>
+</p>
+
+<p>
   <strong>Car make:</strong>
   <%= @car.car_make %>
 </p>
@@ -34,6 +39,7 @@
   <strong>Image:</strong>
   <%= @car.image %>
 </p>
+
 
 <%= link_to 'Edit', edit_car_path(@car) %> |
 <%= link_to 'Back', :back %>

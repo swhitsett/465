@@ -8,10 +8,6 @@
     }
 </style>
 
-<p id="notice"><%= notice %></p>
-
-
-
 <body class = "tinted-image">
   <div class="row">
     <div class ="col-xs-6">
@@ -68,6 +64,7 @@
                     data-amount="<%=@event.cost%>"></script>
                     
                     <%= hidden_field_tag :eventID, @event.id %>
+                    <%= hidden_field_tag :cost, @event.cost %>
 
           <% end %>  
         </div>

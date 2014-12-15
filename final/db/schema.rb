@@ -39,11 +39,13 @@ ActiveRecord::Schema.define(version: 20141209071214) do
     t.string   "car_desc"
     t.integer  "image_id"
     t.integer  "user_id"
+    t.integer  "track_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "cars", ["image_id"], name: "index_cars_on_image_id"
+  add_index "cars", ["track_id"], name: "index_cars_on_track_id"
   add_index "cars", ["user_id"], name: "index_cars_on_user_id"
 
   create_table "events", force: true do |t|

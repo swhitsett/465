@@ -14,6 +14,7 @@ class TracksController < ApplicationController
     @image = Image.all
     @imageBackground
     @cars = Car.all
+    @ttime = @track.ttimes.new
   end
 
   # GET /tracks/new
