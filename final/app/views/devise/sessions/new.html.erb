@@ -1,17 +1,59 @@
-<h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+<% @imageBackground = root_url + "/images/" + Image.find(rand(1..9)).image_fname %>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+<style>
+  
+  .image {
+    background: 
+      linear-gradient(
+        rgba(0, 0, 0, 0), 
+        rgba(0, 0, 0, 0)
+      ),
+      url(<%= @imageBackground %>);
+  }
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+  .darken{
+  		background: 
+      linear-gradient(
+        rgba(0, 0, 0, 0.9), 
+        rgba(0, 0, 0, 0.9)
+      );
+      color: white;
+      align: center;
 
-  <div><%= f.submit "Log in" %></div>
-<% end %>
+  }
+  .do {
+	    width: 350px;
+	    height: 420px;
+	    position: absolute;
+	    top:0;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	    text-align: center;
+	    margin: auto;
+	}
+</style>
 
-<%= render "devise/shared/links" %>
+<body class="image">
+	<div class="do">
+			<div class="darken" >
+				<h2>Log in</h2>
+
+				<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+				  <%= f.label :email %><br />
+				  <div style="color: black"><%= f.email_field :email, autofocus: true %></div>
+
+				  <%= f.label :password %><br />
+				  <div style="color: black"><%= f.password_field :password, autocomplete: "off" %></div>
+
+				  <% if devise_mapping.rememberable? -%>
+				    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+				  <% end -%>
+
+				  <div style="color: black"><%= f.submit "Log in" %></div>
+				<% end %>
+				<%= render "devise/shared/links" %>
+			</div>
+	</div>
+</body>

@@ -10,7 +10,8 @@
       </ul>
     </div>
   <% end %>
-
+  <br>
+  <h4>Add a new car</h4>
   <div class="field">
     <%= f.hidden_field :user_id %>
     <%= hidden_field_tag :user_id, current_user.id %>
@@ -38,10 +39,6 @@
   <div class="field">
     <%= f.label :car_desc %><br>
     <%= f.text_field :car_desc %>
-  </div>
-  <div class="field">
-    <%= f.label :image_id %><br>
-    <%= f.text_field :image_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

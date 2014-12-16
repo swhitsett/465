@@ -6,27 +6,27 @@
 </p>
 
 <p>
-  <strong>Car make:</strong>
+  <strong>Make:</strong>
   <%= @car.car_make %>
 </p>
 
 <p>
-  <strong>Car model:</strong>
+  <strong>Model:</strong>
   <%= @car.car_model %>
 </p>
 
 <p>
-  <strong>Car year:</strong>
+  <strong>Year:</strong>
   <%= @car.car_year %>
 </p>
 
 <p>
-  <strong>Car displacement:</strong>
+  <strong>Displacement:</strong>
   <%= @car.car_displacement %>
 </p>
 
 <p>
-  <strong>Car weight:</strong>
+  <strong>Weight:</strong>
   <%= @car.car_weight %>
 </p>
 
@@ -35,11 +35,12 @@
   <%= @car.car_desc %>
 </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @car.image %>
-</p>
 
+<% @car.ttimes.each do |time| %>
+  <li><%= time.minutes.to_s+":"+
+      time.seconds.to_s+":"+
+      time.miliseconds.to_s+" @ " %>
+  <%= link_to Track.find(time.track_id).track_name, Track.find(time.track_id) %></li>
+<% end %>
 
-<%= link_to 'Edit', edit_car_path(@car) %> |
 <%= link_to 'Back', :back %>

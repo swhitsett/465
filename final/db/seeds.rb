@@ -4,7 +4,11 @@ images = Image.create(
     { image_fname: 'willowsprings.jpg', track_id: '2'},
     { image_fname: 'Sonoma.jpg', track_id: '3'},
     { image_fname: 'Leguna.jpg', track_id: '4'},
-    { image_fname: 'LBW-458-Challenge-03.jpg', track_id: '123'}
+    { image_fname: 'r2.jpg'},
+    { image_fname: 'r3.jpg'},
+    { image_fname: 'r4.jpg'},
+    { image_fname: 'r7.jpg'},
+    { image_fname: 'r1.jpg', track_id: '123'}
   ]
 )
 
@@ -33,11 +37,11 @@ accesses = Access.create(
 
 events = Event.create(
   [
-    { cost: '12000', event_name: 'Go Super Fast', track_id: '1', event_model: 'Mercedes-Benz', event_model: 'C-class', event_desc: 'a;sghaosbvoehoaieho;ghof;aoiasdgasertgashasdflkughvuiawhes;ogyiausbe;ltrfh aasdfas faeeeasgipuha shkjbvuyuyasl kueryiulgvbasdiluge uudhdjh djjdjdjdjdhdjughugu guguggehoigha;ohgoaif;nc'},
-    { cost: '12500', event_name: 'Beginer tranning event', track_id: '2', event_model: 'Chevrolet', event_model: 'Camaro', event_year: '1969', event_displacement: '5.7', event_desc: 'a;sghaosbvoehoaieh;asldighasolijh ga;osihgasio;dghfiaosdfhjioeionga;sidhihe indiia;serighigah;sd tgegasdgasgeo;ghof ;aoiehfasdfadffffasdfoigha;ohgoaif;nc'},
-    { cost: '16500', event_name: 'Open Track day', track_id: '3', event_desc: 'a;sghaosbvoehoaieho;ghof;aoiasdgasertgash asdflku ghvuiawhes;ogyiausbe;ltrfhasg ipuhashkjbv uyuyaslkueryiulgvbasdilugeuudhdjhdjjd jdjdjdhdjug huguguguggehoigha;ohgoaif;nc'},
-    { cost: '5000', event_name: 'Dont Crash', track_id: '3', event_desc: 'a;sghaosbvoehoaieho;ghof;aoiasdgasertga shasdflkughvuiawhes ;ogyiausbe;ltrfhasgipuhash kjbvuyuyaslku eryiulgvbasdi lugeuudhdjhdjjdjdjfagaegegdjd hdjughuguguguggehoig ha;ohgoaif;nc'},
-    { cost: '100', event_name: 'Mr Test Event', track_id: '1', event_desc: 'Car go Vroom Vroom'}
+    { cost: '12000', event_name: 'Go Super Fast', date: "12/22/14", track_id: '1', event_model: 'C-class', event_desc: 'a;sghaosbvoehoaieho;ghof;aoiasdgasertgashasdflkughvuiawhes;ogyiausbe;ltrfh aasdfas faeeeasgipuha shkjbvuyuyasl kueryiulgvbasdiluge uudhdjh djjdjdjdjdhdjughugu guguggehoigha;ohgoaif;nc'},
+    { cost: '12500', event_name: 'Beginer tranning event',date: "12/19/14", track_id: '2', event_model: 'Camaro', event_year: '1969', event_displacement: '5.7', event_desc: 'a;sghaosbvoehoaieh;asldighasolijh ga;osihgasio;dghfiaosdfhjioeionga;sidhihe indiia;serighigah;sd tgegasdgasgeo;ghof ;aoiehfasdfadffffasdfoigha;ohgoaif;nc'},
+    { cost: '16500', event_name: 'Open Track day', date: "12/20/14", track_id: '3', event_desc: 'a;sghaosbvoehoaieho;ghof;aoiasdgasertgash asdflku ghvuiawhes;ogyiausbe;ltrfhasg ipuhashkjbv uyuyaslkueryiulgvbasdilugeuudhdjhdjjd jdjdjdhdjug huguguguggehoigha;ohgoaif;nc'},
+    { cost: '5000', event_name: 'Dont Crash', date: "12/18/14", track_id: '3', event_desc: 'a;sghaosbvoehoaieho;ghof;aoiasdgasertga shasdflkughvuiawhes ;ogyiausbe;ltrfhasgipuhash kjbvuyuyaslku eryiulgvbasdi lugeuudhdjhdjjdjdjfagaegegdjd hdjughuguguguggehoig ha;ohgoaif;nc'},
+    { cost: '100', event_name: 'Mr Test Event', date: "12/17/14", track_id: '1', event_model: "Mustang", event_desc: 'Car go Vroom Vroom'}
   ]
 )
 
@@ -87,12 +91,12 @@ users = User.create(
     { name: 'ron', email: 'r@r.com', password: 'r', password_confirmation: 'r'},
     { name: 'yamborgini', email: 'y@y.com', password: 'y', password_confirmation: 'y'},
     { name: 'Elmo', email: 'e@e.com', password: 'e', password_confirmation: 'e'},
-    { name: 'Ken Block', email: 'rule@internet.com', password: 'cat', password_confirmation: 'kitty'},
-    { name: 'Ron Jeremey', email: 'rule@internet.com', password: 'cat', password_confirmation: 'kitty'},
-    { name: 'Scarlet Johansen', email: 'rule@internet.com', password: 'cat', password_confirmation: 'kitty'},
-    { name: 'Tanner Foust', email: 'rule@internet.com', password: 'cat', password_confirmation: 'kitty'},
-    { name: 'JakeFromStateFarm', email: 'rule@internet.com', password: 'cat', password_confirmation: 'kitty'},
-    { name: 'taco bell', email: 'taco@tacobell.com', password: 'taco', password_confirmation: 'shell'}
+    { name: 'Ken Block', email: 'e@e.com', password: 'e', password_confirmation: 'e'},
+    { name: 'Scarlet Johansen', email: 'e@e.com', password: 'e', password_confirmation: 'e'},
+    { name: 'Tanner Foust', email: 'e@e.com', password: 'e', password_confirmation: 'e'},
+    { name: 'JakeFromStateFarm', email: 'e@e.com', password: 'e', password_confirmation: 'e'},
+    { name: 'taco bell', email: 'e@e.com', password: 'e', password_confirmation: 'e'},
+    { name: 'Kenny', email: 'e@e.com', password: 'e', password_confirmation: 'e'}
   ]
 
   )

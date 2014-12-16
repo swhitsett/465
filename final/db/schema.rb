@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20141209071214) do
     t.integer  "event_year"
     t.float    "event_displacement"
     t.integer  "event_weight"
+    t.string   "date"
     t.integer  "user_id"
     t.integer  "track_id"
     t.integer  "image_id"

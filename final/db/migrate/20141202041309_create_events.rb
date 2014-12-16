@@ -8,6 +8,7 @@ class CreateEvents < ActiveRecord::Migration
       t.integer :event_year
       t.float :event_displacement
       t.integer :event_weight
+      t.string :date
       t.references :user, index: true
       t.references :track, index: true
       t.references :image, index: true

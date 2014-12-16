@@ -22,6 +22,14 @@ class TtimesController < ApplicationController
     @car = Car.find(params[:car_id])
     @ttime = @car.ttimes.new(ttime_params)
 
+    Track.all.each do |t|
+      t.ttimes.each do |times|
+        if @ttime.car_id == times.car_id && times.track_id == @ttime.track_id
+          times.destroy
+        end
+      end
+    end
+
     if @ttime.save
       redirect_to :back, notice: "Your time was added"
     else
