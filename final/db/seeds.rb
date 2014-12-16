@@ -36,7 +36,8 @@ events = Event.create(
     { cost: '12000', event_name: 'Go Super Fast', track_id: '1', event_model: 'Mercedes-Benz', event_model: 'C-class', event_desc: 'a;sghaosbvoehoaieho;ghof;aoiasdgasertgashasdflkughvuiawhes;ogyiausbe;ltrfh aasdfas faeeeasgipuha shkjbvuyuyasl kueryiulgvbasdiluge uudhdjh djjdjdjdjdhdjughugu guguggehoigha;ohgoaif;nc'},
     { cost: '12500', event_name: 'Beginer tranning event', track_id: '2', event_model: 'Chevrolet', event_model: 'Camaro', event_year: '1969', event_displacement: '5.7', event_desc: 'a;sghaosbvoehoaieh;asldighasolijh ga;osihgasio;dghfiaosdfhjioeionga;sidhihe indiia;serighigah;sd tgegasdgasgeo;ghof ;aoiehfasdfadffffasdfoigha;ohgoaif;nc'},
     { cost: '16500', event_name: 'Open Track day', track_id: '3', event_desc: 'a;sghaosbvoehoaieho;ghof;aoiasdgasertgash asdflku ghvuiawhes;ogyiausbe;ltrfhasg ipuhashkjbv uyuyaslkueryiulgvbasdilugeuudhdjhdjjd jdjdjdhdjug huguguguggehoigha;ohgoaif;nc'},
-    { cost: '5000', event_name: 'Dont Crash', track_id: '3', event_desc: 'a;sghaosbvoehoaieho;ghof;aoiasdgasertga shasdflkughvuiawhes ;ogyiausbe;ltrfhasgipuhash kjbvuyuyaslku eryiulgvbasdi lugeuudhdjhdjjdjdjfagaegegdjd hdjughuguguguggehoig ha;ohgoaif;nc'}
+    { cost: '5000', event_name: 'Dont Crash', track_id: '3', event_desc: 'a;sghaosbvoehoaieho;ghof;aoiasdgasertga shasdflkughvuiawhes ;ogyiausbe;ltrfhasgipuhash kjbvuyuyaslku eryiulgvbasdi lugeuudhdjhdjjdjdjfagaegegdjd hdjughuguguguggehoig ha;ohgoaif;nc'},
+    { cost: '100', event_name: 'Mr Test Event', track_id: '1', event_desc: 'Car go Vroom Vroom'}
   ]
 )
 
