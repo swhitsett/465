@@ -1,0 +1,49 @@
+Track times
+	allows a user to create an account with information about track time for their car.
+
+add the gems
+
+        gem "therubyracer"
+
+        gem "less-rails"
+
+        gem "twitter-bootstrap-rails"
+
+
+
+rails g bootstrap:install
+
+
+
+rails g bootstrap:layout application fixed
+
+        Y to override the old file
+
+
+
+the changes will be in /views/layouts/application.html.erb
+
+
+
+go to /app/assets/stylesheets/bootstrap_and_overides.css.less
+
+        add body{ padding-top: 60px; }
+
+
+capable of creating an event.
+Allowed to search events, cars, tracks
+
+
+user 
+	rails g devise User 
+tracks
+	rails g scaffold Track track_name:string track_location:string track_desc:string car:references image:references event:references
+cars
+	rails g scaffold Car car_make:string car_model:string car_year:string image:references
+images
+	rails g scaffold Image image_fname:string 
+event
+	rails g scaffold Event track:references car:references
+access
+	rails g scaffold Access user:references track:references car:references event:references
+
